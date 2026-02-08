@@ -1,0 +1,1015 @@
+{
+  "metadata": {
+    "total_questions": 100,
+    "question_types": {
+      "factual": 30,
+      "comparative": 20,
+      "inferential": 30,
+      "multi-hop": 20
+    },
+    "generation_method": "Flan-T5-base (robust automatic)",
+    "source": "Wikipedia corpus"
+  },
+  "qa_pairs": [
+    {
+      "question": "Against which women scored goal for their team at this World Championship final event? [Tennon 2012)?",
+      "answer": "[3]. [4]. [5]. [6].",
+      "question_type": "factual",
+      "source_chunk_id": "5472ab57_chunk_0018",
+      "source_title": "Keira Walsh",
+      "source_url": "https://en.wikipedia.org/wiki/Keira_Walsh",
+      "source_text": "El Periódico said of the first that Walsh must have \"chased away some of the demons that accompanied her every time she approached the area.\" She again picked up a variety of accolades at the end of 2023, including a nomination for The Best FIFA Women's Player and being voted the She's A Baller of t...",
+      "id": "qa_001"
+    },
+    {
+      "question": "When was Empress Ikeyoko, wife  of General Iwate Hirosemuké, married first with a heirship of Emperor Akbar during what junph century-long siehoku-shan war?)?",
+      "answer": "[2]. [4]. [5].",
+      "question_type": "factual",
+      "source_chunk_id": "cd515b38_chunk_0007",
+      "source_title": "Long Island City",
+      "source_url": "https://en.wikipedia.org/wiki/Long_Island_City",
+      "source_text": "The former Silvercup bakery is now home to Silvercup Studios , which has produced notable works such as NBC 's 30 Rock and HBO 's Sex and the City and The Sopranos . The Silvercup sign is visible from the IRT Flushing Line and BMT Astoria Line trains going into and out of Queensboro Plaza ( 7 , <7> ...",
+      "id": "qa_002"
+    },
+    {
+      "question": "What country was Israel located from after the pyramid expansion to Adan Aqari, in Palestine and in southern Lebanon in 1857 to 1665? [1e26/08|0]&lolen_010&reelnilennet1912-08?",
+      "answer": "unanswerable",
+      "question_type": "factual",
+      "source_chunk_id": "ae7a3d8e_chunk_0054",
+      "source_title": "Ancient Egyptian race controversy",
+      "source_url": "https://en.wikipedia.org/wiki/Ancient_Egyptian_race_controversy",
+      "source_text": "Grafton Elliot Smith modified the theory in 1911, stating that the ancient Egyptians were a dark haired \"brown race\", most closely \"linked by the closest bonds of racial affinity to the Early Neolithic populations of the North African littoral and South Europe\", and not Negroid . Smith's \"brown race...",
+      "id": "qa_003"
+    },
+    {
+      "question": "Who will build offsite winds power plants and turbine complex?",
+      "answer": "Nelja Energia, Hiiu Municipality",
+      "question_type": "factual",
+      "source_chunk_id": "5e3f0548_chunk_0002",
+      "source_title": "Enefit Green",
+      "source_url": "https://en.wikipedia.org/wiki/Enefit_Green",
+      "source_text": "^ Õepa, Aivar (2012-06-14). \"Nelja Energia launches biogas developments\" . news2biz . Archived from the original on 2013-01-29 . Retrieved 2012-07-12 . ^ Vahtla, Aili (2017-06-15). \"Nelja Energia opens first cogeneration plant, pellet factory in Latvia\" . ERR . Retrieved 2018-06-03 . ^ Vahtla, Aili ...",
+      "id": "qa_004"
+    },
+    {
+      "question": "Why could there have never been other events, even though these might have included human beings who cannot act or may still think ? Pick your answer carefully with your questions answered?",
+      "answer": "Violations occur when policy violations are made due to a history of \"getting away with it\", so the perception develops that the risk is lower than it real",
+      "question_type": "factual",
+      "source_chunk_id": "853ec464_chunk_0021",
+      "source_title": "Human factors in diving safety",
+      "source_url": "https://en.wikipedia.org/wiki/Human_factors_in_diving_safety",
+      "source_text": "Colour discrimination is also diminished with depth and darkness, and colour-coding becomes an unreliable method of identifying equipment at the times when it is most critical and an error can be fatal. Human error is often linked to design details. Some errors are more likely to be made because the...",
+      "id": "qa_005"
+    },
+    {
+      "question": "Where is UCLA named in 2008 and in 2001/09 NCAA All Tournament Conference All Star Winning ?Wt?Republic , Maryland  and Florida national division?",
+      "answer": "unanswerable",
+      "question_type": "factual",
+      "source_chunk_id": "f5f9e518_chunk_0004",
+      "source_title": "2008–09 UCLA Bruins men's basketball team",
+      "source_url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_UCLA_Bruins_men%27s_basketball_team",
+      "source_text": "\"No 'Midnight Madness' for UCLA, USC basketball teams\" . Los Angeles Times . Retrieved December 1, 2008 . ^ Plaschke, Bill (April 20, 2008). \"Love can't have a legacy without joining fraternity\" . Los Angeles Times . Archived from the original on June 12, 2022. ^ \"Pac-10 Conference\" . USA Today . Ap...",
+      "id": "qa_006"
+    },
+    {
+      "question": "WHICH NZ organization partnered and published the most original information? Name only twice : iReliefAnteninism/NewfoundlihoodSelfDeferTurgencies. Name the name of an Indian noncontagonal charity?",
+      "answer": "Freedom From Religion Foundation",
+      "question_type": "factual",
+      "source_chunk_id": "87f2dba4_chunk_0053",
+      "source_title": "In God We Trust",
+      "source_url": "https://en.wikipedia.org/wiki/In_God_We_Trust",
+      "source_text": "Archived from the original on 2021-06-02 . Retrieved 2021-05-31 . ^ Nachreiner-Mackesey, Bailey (26 April 2021). \"Take Action: \"In God We Trust\" bill has passed the Ill. House – Freedom From Religion Foundation\" . ffrf.org . Archived from the original on 2021-06-02 . Retrieved 2021-05-31 . ^ Nachrei...",
+      "id": "qa_007"
+    },
+    {
+      "question": "In 1944 how much money was held and where?[sicname below the entry?]...?",
+      "answer": "unanswerable",
+      "question_type": "factual",
+      "source_chunk_id": "aa2a8d22_chunk_0029",
+      "source_title": "148th Rifle Division",
+      "source_url": "https://en.wikipedia.org/wiki/148th_Rifle_Division",
+      "source_text": "Over the following days 2nd Army retreated to the Desna River as Rokossovskii shifted his attention to the left (north) flank of 4th Panzer Army . On September 9 elements of Central Front crossed the Desna south of Novhorod-Siverskyi, where the 148th had fought two years earlier, and at Otsekin and ...",
+      "id": "qa_008"
+    },
+    {
+      "question": "How are albums originally presented here marketed or recorded/issue?",
+      "answer": "(B). [D]. [A]. [B]. [C]. [D]",
+      "question_type": "factual",
+      "source_chunk_id": "196de446_chunk_0009",
+      "source_title": "Catallena",
+      "source_url": "https://en.wikipedia.org/wiki/Catallena",
+      "source_text": "iTunes Store (JP). Archived from the original on 7 July 2020 . Retrieved 2 July 2020 . \"The Third Single Catallena – Single by Orange Caramel\" . iTunes Store (GB). Archived from the original on 7 July 2020 . Retrieved 3 July 2020 . \"The Third Single Catallena – Single by Orange Caramel\" . iTunes Sto...",
+      "id": "qa_009"
+    },
+    {
+      "question": "Galoiddeachá has what term that stands in Ireland?",
+      "answer": "COGG in the Republic of Ireland and by Comhairle na Gaelscolaochta in Northern Ireland",
+      "question_type": "factual",
+      "source_chunk_id": "cf8c496f_chunk_0001",
+      "source_title": "Gaelscoil",
+      "source_url": "https://en.wikipedia.org/wiki/Gaelscoil",
+      "source_text": "English-medium schools, in contrast, produce relatively few fluent Irish speakers , despite the Irish language being an obligatory subject in the Republic of Ireland in both primary and secondary school. This has been attributed in part to the lack of Irish-language immersion programs. Gaelscoileann...",
+      "id": "qa_010"
+    },
+    {
+      "question": "who set telegraphy recordar standards later that decade by making video .?no specific source mentioned for describing his style yet it stayed for over 20 years?",
+      "answer": "Paul Nipkow",
+      "question_type": "factual",
+      "source_chunk_id": "8353e7e6_chunk_0016",
+      "source_title": "List of German inventions and discoveries",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_German_inventions_and_discoveries",
+      "source_text": "1150: The earliest known morality play ( Ordo Virtutum ) by St. Hildegard of Bingen, OSB c. 1505: The world's first (pocket) watch ( Watch 1505 ) by Peter Henlein 1663: First magazine ( Erbauliche Monaths Unterredungen ) 1885: Nipkow disk (fundamental component in the earliest televisions ) by Paul ...",
+      "id": "qa_011"
+    },
+    {
+      "question": "what name came after AGB was created, and also played that? Select any that would match your information below as described above. XLI?",
+      "answer": "unanswerable",
+      "question_type": "factual",
+      "source_chunk_id": "5f6985f2_chunk_0002",
+      "source_title": "Play Novel Silent Hill",
+      "source_url": "https://en.wikipedia.org/wiki/Play_Novel_Silent_Hill",
+      "source_text": "28 endings were created between the Cybil and Harry scenarios. These endings cover a host of different situations that could unfold if key moments in the original game not occurred as they had. The third scenario involves Andy, who is Cheryl's classmate and neighbor who hides in Harry's Jeep and als...",
+      "id": "qa_012"
+    },
+    {
+      "question": "Where was it most recent update held in September 1902,? Select your year . If possible remember?",
+      "answer": "Tokyo MX TV Tales of the Abyss (anime) at Anime News Network's encyclopedia",
+      "question_type": "factual",
+      "source_chunk_id": "822eadbf_chunk_0001",
+      "source_title": "List of Tales of the Abyss episodes",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_Tales_of_the_Abyss_episodes",
+      "source_text": "Two pieces of theme music were used for the episodes, one opening theme and one ending theme. The opening theme, \"Karma\" by Bump of Chicken , is the theme song of the source game. The ending theme is Bōken Suisei by Kurumi Enomoto . Episode list [ edit ] References [ edit ] ^ テイルズ オブ ジ アビス公式サイト (in ...",
+      "id": "qa_013"
+    },
+    {
+      "question": "Where were there 77 home opener points during this season in Oakland last year that were unanulised and unrepaired??",
+      "answer": "unanswerable",
+      "question_type": "factual",
+      "source_chunk_id": "3e103aaf_chunk_0029",
+      "source_title": "2015 Denver Broncos season",
+      "source_url": "https://en.wikipedia.org/wiki/2015_Denver_Broncos_season",
+      "source_text": "Week 14: vs. Oakland Raiders [ edit ] Week Fourteen: Oakland Raiders at Denver Broncos – Game summary at Sports Authority Field at Mile High, Denver, Colorado Date : December 13 Game time : 2:05 pm. MST Game weather : 45 °F (7 °C), partly cloudy Game attendance : 76,824 Referee : Bill Vinovich TV an...",
+      "id": "qa_014"
+    },
+    {
+      "question": "Who says Bin Laddein killed? (Ossualities) by?",
+      "answer": "Schabner, Dean; Travers, Karen",
+      "question_type": "factual",
+      "source_chunk_id": "b854578b_chunk_0129",
+      "source_title": "Barack Obama",
+      "source_url": "https://en.wikipedia.org/wiki/Barack_Obama",
+      "source_text": "Newsday . May 2, 2011 . Retrieved September 13, 2014 . ^ Schabner, Dean; Travers, Karen (May 1, 2011). \"Osama bin Laden Killed by U.S. Forces in Pakistan\" . ABC News . Archived from the original on May 4, 2011 . Retrieved May 3, 2011 . ^ Baker, Peter; Cooper, Helene; Mazzetti, Mark (May 2, 2011). \"B...",
+      "id": "qa_015"
+    },
+    {
+      "question": "what TV channels exist by Kevin and Durar? pick ehence?",
+      "answer": "Playboy Channel",
+      "question_type": "factual",
+      "source_chunk_id": "baf5118b_chunk_0005",
+      "source_title": "Duran Duran",
+      "source_url": "https://en.wikipedia.org/wiki/Duran_Duran",
+      "source_text": "The first single, \" Planet Earth \", had reached the United Kingdom's top 20 at number 12 in February. A follow-up, \" Careless Memories \", released in April, stalled at number 37. The third single, \" Girls on Film \", was released in July and went to number 5 in the UK. The video, featuring topless wo...",
+      "id": "qa_016"
+    },
+    {
+      "question": "where is maashal mikno'm from now and where does his birth fall?",
+      "answer": "[3]. [4]. [5]. [6].",
+      "question_type": "factual",
+      "source_chunk_id": "43bf79ac_chunk_0000",
+      "source_title": "Mashaal Tammo",
+      "source_url": "https://en.wikipedia.org/wiki/Mashaal_Tammo",
+      "source_text": "Syrian Kurdish politician (1958–2011) Mashaal Tammo , also Mash'al Tammo ( Arabic : مشعل تمو , romanized : Mashʿal Tammo , Kurdish : مشەل تەمۆ , romanized : Mişel Temo ; 1958 – October 7, 2011) was a Syrian Kurdish politician and activist who supported the interests of the minority of the Kurds . Ta...",
+      "id": "qa_017"
+    },
+    {
+      "question": "who is aide for uganin? Choose the appropriate option in the last heading?",
+      "answer": "unanswerable",
+      "question_type": "factual",
+      "source_chunk_id": "089409dd_chunk_0006",
+      "source_title": "2013 Radda airstrike",
+      "source_url": "https://en.wikipedia.org/wiki/2013_Radda_airstrike",
+      "source_text": "He said that, as a native of Ibb , it would have been improbable for Badani to be invited to a small tribal wedding celebration in a region he was foreign to. Shiban believed that perhaps the drone operators \"saw a group of people waiting in trucks for a convoy and they assumed they were militants, ...",
+      "id": "qa_018"
+    },
+    {
+      "question": "How many RTFS matches were hosted in 2013-12-16 tournament?",
+      "answer": "(B). (C). [D]. [A]. [B]. [C].",
+      "question_type": "factual",
+      "source_chunk_id": "dcdbf84e_chunk_0008",
+      "source_title": "Oxford Universities Quadball Club",
+      "source_url": "https://en.wikipedia.org/wiki/Oxford_Universities_Quadball_Club",
+      "source_text": "Oxford Mail . Retrieved 6 May 2014 . ^ \"The Oxford Student – Oxford snitch rights to host Quidditch Cup\" . Oxford Student . Retrieved 6 May 2014 . ^ \"Cherwell – British Quidditch Cup review\" . Cherwell . Retrieved 6 May 2014 . ^ \"IQA – Chimeras take Europe\" . International Quidditch Association . Ar...",
+      "id": "qa_019"
+    },
+    {
+      "question": "what are used not in mono to create riphoto prints in analog high brightness video video format cameras, CRTV video/audio tape input system etc?",
+      "answer": "Color CRTs need higher anode voltages than monochrome CRT to achieve the same brightness since the shadow mask blocks most of the electron beam",
+      "question_type": "factual",
+      "source_chunk_id": "f8f256dc_chunk_0034",
+      "source_title": "Cathode ray tube",
+      "source_url": "https://en.wikipedia.org/wiki/Cathode_ray_tube",
+      "source_text": "They are also more resistant to warping. Color CRTs need higher anode voltages than monochrome CRTs to achieve the same brightness since the shadow mask blocks most of the electron beam. Slot masks and specially Aperture grilles do not block as many electrons resulting in a brighter image for a give...",
+      "id": "qa_020"
+    },
+    {
+      "question": "What year were these two scientific breakthrough work articles originally published, first serialized thereunder.?",
+      "answer": "[2]. [4]. [5].",
+      "question_type": "factual",
+      "source_chunk_id": "8353e7e6_chunk_0107",
+      "source_title": "List of German inventions and discoveries",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_German_inventions_and_discoveries",
+      "source_text": "CRC Press. p. 46. ISBN 978-1420072716 . ^ Betz, A. (1966) Introduction to the Theory of Flow Machines. (D. G. Randall, Trans.) Oxford: Pergamon Press. ^ Bellis, Mary (6 March 2017). \"The Evolution of the Metal Detector\" . ThoughtCo . Archived from the original on 7 November 2020 . Retrieved 2018-04-...",
+      "id": "qa_021"
+    },
+    {
+      "question": "How are African people thought for their cultures, according?",
+      "answer": "not enough information to answer the above question",
+      "question_type": "factual",
+      "source_chunk_id": "8fd8ecf6_chunk_0039",
+      "source_title": "Latin America",
+      "source_url": "https://en.wikipedia.org/wiki/Latin_America",
+      "source_text": "It is also spoken by some Panamanians of Afro- Antillean descent. Dutch is the official language in Suriname , Aruba , Curaçao and Bonaire . (As Dutch is a Germanic language , the territories are not necessarily considered part of Latin America.) However, the native and co-official language of Aruba...",
+      "id": "qa_022"
+    },
+    {
+      "question": "How tall, was the head dek?. *What color belt could she have fitted for?* *What grade of degrees do most schools accept & how large can it become?",
+      "answer": "double degrees do most schools accept & how large can it become",
+      "question_type": "factual",
+      "source_chunk_id": "f813e514_chunk_0002",
+      "source_title": "Mannheim Business School",
+      "source_url": "https://en.wikipedia.org/wiki/Mannheim_Business_School",
+      "source_text": "The 24 months program starts yearly in September and is spread over three calendar years. This program also includes two international study trips. Mannheim Executive MBA [ edit ] The Mannheim Executive MBA is a weekend-based part-time program (18 months). It starts every year in April and is spread...",
+      "id": "qa_023"
+    },
+    {
+      "question": "what band were in Empth?",
+      "answer": "James Ginzburg and Paul Purgas",
+      "question_type": "factual",
+      "source_chunk_id": "12b9556e_chunk_0000",
+      "source_title": "Emptyset",
+      "source_url": "https://en.wikipedia.org/wiki/Emptyset",
+      "source_text": "English music production duo Not to be confused with Empty set . Emptyset is a Bristol -based production project, formed in 2005 by James Ginzburg and Paul Purgas. Ginzburg and Purgas say that by working across performance, installation and the moving image they are examining the physical properties...",
+      "id": "qa_024"
+    },
+    {
+      "question": "Why is there widespread concern about religious and educational standards here and there .?",
+      "answer": "[3]. [4]. None of the above choices",
+      "question_type": "factual",
+      "source_chunk_id": "3f2419d7_chunk_0002",
+      "source_title": "Places of worship in Burnley",
+      "source_url": "https://en.wikipedia.org/wiki/Places_of_worship_in_Burnley",
+      "source_text": "The church has been designated by English Heritage as a Grade II listed building. A baptistery was added during the 20th century. The reredos , and almost all the stained glass, is by Kempe . St Andrew’s serves a mixed area in north Burnley varying from extremely deprived terraced housing to 1970's ...",
+      "id": "qa_025"
+    },
+    {
+      "question": "Why would most fc3+ gene pyechomyces pdmv1k not assemble with the gene nudifuction gene in your organism thqw?",
+      "answer": "(A). (B). (C).",
+      "question_type": "factual",
+      "source_chunk_id": "19aa3d9e_chunk_0001",
+      "source_title": "Leaky scanning",
+      "source_url": "https://en.wikipedia.org/wiki/Leaky_scanning",
+      "source_text": "Discovery [ edit ] Through several studies Marilyn Kozak was the first to recognize the main role of scanning during initiation of translation in mammalian cells. The AUG codon in mammals is optimally recognized by the context GCCRCCAUGG, also known as a “ Kozak Consensus Sequence .” Purine (R) and ...",
+      "id": "qa_026"
+    },
+    {
+      "question": "Which transport hub has been built for Sindharapur?",
+      "answer": "Karachi Urban Transport Corporation (KUTC",
+      "question_type": "factual",
+      "source_chunk_id": "846b0388_chunk_0003",
+      "source_title": "Karachi Circular Railway",
+      "source_url": "https://en.wikipedia.org/wiki/Karachi_Circular_Railway",
+      "source_text": "KCR will have 250 modern driverless electric bullet trains which would run 17-hours a day & 7-days a week. This project is also part of CPEC. Total cost of the project would be 294 billion PKR. The KCR would be run by the Sindh Government through Karachi Urban Transport Corporation (KUTC). Construct...",
+      "id": "qa_027"
+    },
+    {
+      "question": "When were \"Méxichus\"' albums issued worldwide through Billstreet'.?",
+      "answer": "[2]. [3]. [4]. [5]. [6].",
+      "question_type": "factual",
+      "source_chunk_id": "36bd6afb_chunk_0015",
+      "source_title": "Daddy Yankee discography",
+      "source_url": "https://en.wikipedia.org/wiki/Daddy_Yankee_discography",
+      "source_text": "Billboard . October 11, 2008 . Retrieved April 25, 2017 . ^ \"Talento de Barrio by Daddy Yankee -Music Charts\" . acharts.co . Retrieved July 16, 2017 . ^ Cobo, Leila (November 11, 2013). \"Inside Daddy Yankee's Digital-Only 'King' Album\" . Billboard . Retrieved July 20, 2017 . ^ \" 'King Daddy Edition'...",
+      "id": "qa_028"
+    },
+    {
+      "question": "At which point?",
+      "answer": "On September 10, 1934, the Voivode presided upon his own Romani congress",
+      "question_type": "factual",
+      "source_chunk_id": "32c71e59_chunk_0018",
+      "source_title": "Gheorghe A. Lăzăreanu-Lăzurică",
+      "source_url": "https://en.wikipedia.org/wiki/Gheorghe_A._L%C4%83z%C4%83reanu-L%C4%83zuric%C4%83",
+      "source_text": "Also that month, Lăzurică and Șerboianu agreed to merge their respective organizations, forming a new UGRR of which they were, respectively, the \"organizing chairman\" and \"active chairman\". They were assisted by an executive bureau, whose members included Ispas Borbely, Nicolae Gheorghe Lache, Apost...",
+      "id": "qa_029"
+    },
+    {
+      "question": "which sports is criticized for being at little higher risk over bungezages? Choice Fact c?",
+      "answer": "rock climbing , bungee jumping , motorcycle racing and skydiving",
+      "question_type": "factual",
+      "source_chunk_id": "853ec464_chunk_0003",
+      "source_title": "Human factors in diving safety",
+      "source_url": "https://en.wikipedia.org/wiki/Human_factors_in_diving_safety",
+      "source_text": "Recreational diving has been rated more risky than snow skiing , but less risky than some other adventure sports such as rock climbing , bungee jumping , motorcycle racing and sky diving . Improvements in training standards and equipment design and configuration, and increased awareness of the risks...",
+      "id": "qa_030"
+    },
+    {
+      "question": "Where where most troops were on March 20, 1921 while on 2nd Squad in Newark under heavy fighting? [subseni tnotimetuturetutoryitute?",
+      "answer": "unanswerable",
+      "question_type": "comparative",
+      "source_chunk_id": "9e635376_chunk_0009",
+      "source_title": "Battle of Hürtgen Forest",
+      "source_url": "https://en.wikipedia.org/wiki/Battle_of_H%C3%BCrtgen_Forest",
+      "source_text": "The weather prevented tactical air support until 5 November. The U.S. 112th Infantry Regiment , attacking from Germeter, took Vossenack and the neighboring ridge by the afternoon. The 112th was then halted by strong defenses and difficult terrain. The 1st and 3rd Battalions of the 112th moved across...",
+      "id": "qa_031"
+    },
+    {
+      "question": "Which was older Buanderó was in relation to another head than Buheno Zarabena of CONNACCI? ? Pick your clue.?",
+      "answer": "Guillermo Martnez Domnguez, the former head of Nacional Financiera",
+      "question_type": "comparative",
+      "source_chunk_id": "622ee2e7_chunk_0003",
+      "source_title": "Manuel Buendía",
+      "source_url": "https://en.wikipedia.org/wiki/Manuel_Buend%C3%ADa",
+      "source_text": "A year later, Buendía worked as an advisor to Guillermo Martínez Domínguez, the former head of Nacional Financiera, a bank of Mexico's Secretariat of Finance and Public Credit (SHCP). In Nacional Financiera, Buendía befriended Gerardo Bueno Zirón, who shortly after being appointed as director of the...",
+      "id": "qa_032"
+    },
+    {
+      "question": "Where could these films actually go but were mostly not released early movies?",
+      "answer": "unanswerable",
+      "question_type": "comparative",
+      "source_chunk_id": "ee23d901_chunk_0000",
+      "source_title": "Alf Collins",
+      "source_url": "https://en.wikipedia.org/wiki/Alf_Collins",
+      "source_text": "British actor (1866–1951) Alf Collins pioneer of cinematograph Alfred Collins ( Walworth , 19 June 1866 – 20 December 1951 Clapham ) was a British theatre actor who later became a silent film director and actor. His shorts include Rescued by Lifeboat (1906), The Lady Athlete; or, Jiu-Jitsu Downs the...",
+      "id": "qa_033"
+    },
+    {
+      "question": "I How do fatal deaths increase while investigatoring the Accident Safety Study: Short-Diffuser Observations?  Which of the given statements was a nonsense subcatechimie of the author citation text titled?",
+      "answer": "The fatality is the peak of the accident pyramid. The base of the pyramid is the shortcuts, and in between are escalating levels of near-accidents which could (but too often do not) serve as lessons learned",
+      "question_type": "comparative",
+      "source_chunk_id": "853ec464_chunk_0013",
+      "source_title": "Human factors in diving safety",
+      "source_url": "https://en.wikipedia.org/wiki/Human_factors_in_diving_safety",
+      "source_text": "Analysis of near accidents can be of great value to identify sources of error and allow planning to reduce or eliminate contributing and compounding conditions. A safety study estimated about a million shortcuts taken per fatal accident. The fatality is the peak of the accident pyramid. The base of ...",
+      "id": "qa_034"
+    },
+    {
+      "question": "If Gregor Pimentina plays what music instrument you have to record? [Belt model ][/B] Where would one want one to hold the instrument during the recording session?? + [Brazilovan piano man/drummo/tunto with flute) [[/—Optiples[:N=Sumatra]/[Athenea]?",
+      "answer": "[Brazilovan piano man/drummo/tunto with flute",
+      "question_type": "comparative",
+      "source_chunk_id": "73ce4c3f_chunk_0000",
+      "source_title": "Federico Cortese",
+      "source_url": "https://en.wikipedia.org/wiki/Federico_Cortese",
+      "source_text": "Federico Cortese has served as music director of the Boston Youth Symphony Orchestras since 1999. He is also the music director of the New England String Ensemble and the conductor of the Harvard-Radcliffe Orchestra at Harvard University . In summer 2009, he was appointed principal conductor of the ...",
+      "id": "qa_035"
+    },
+    {
+      "question": "what allance would be considered homogenotic chronetics during genotypetic selection as in this system despite its inconsequciencing factor at genes of this taxi?",
+      "answer": "females possessing five pairs of X chromosomes as the homogametic sex, and males possessting five X and five Y chrorosomes",
+      "question_type": "comparative",
+      "source_chunk_id": "0fe205ec_chunk_0014",
+      "source_title": "Sex-chromosome dosage compensation",
+      "source_url": "https://en.wikipedia.org/wiki/Sex-chromosome_dosage_compensation",
+      "source_text": "This, combined with the portions that are homologous to chicken Z and human 9 chromosomes imply that this level of incomplete silencing may be the ancestral form of dosage compensation. Regardless of their ambiguous evolutionary history, platypuses have been empirically determined to follow an XY se...",
+      "id": "qa_036"
+    },
+    {
+      "question": "What organ system(edioidentis), if it is monophosphoryeloid in size as well as multiphase fibration of blood vessels between adjacent erytroclei of mitochondria? Choose 1 of more extreme choices from: Name three?",
+      "answer": "human vascular epithelial cells to human mononuclear cells",
+      "question_type": "comparative",
+      "source_chunk_id": "961d01ce_chunk_0011",
+      "source_title": "12-Hydroxyeicosatetraenoic acid",
+      "source_url": "https://en.wikipedia.org/wiki/12-Hydroxyeicosatetraenoic_acid",
+      "source_text": "12( S )-HETE binds with high affinity to a 50 kilodalton (kDa) subunit of a 650 kDa cytosolic and nuclear protein complex. Activities and possible clinical significance [ edit ] Inflammation and inflammatory diseases [ edit ] 12( S )-HpETE, 12( R )-HETE, racemic mixtures of these 12-HETEs, and/or 12...",
+      "id": "qa_037"
+    },
+    {
+      "question": "Why ? Choice 2Optipa? Choice 3. None besides &#8223937.jpgGreene is best known today for The Demoniest Vamster Movie Of The 50/Ord Season. Having topped Bill B. Jones Best Comedic Album?",
+      "answer": "None besides &#8223937",
+      "question_type": "comparative",
+      "source_chunk_id": "08126287_chunk_0008",
+      "source_title": "Alucarda",
+      "source_url": "https://en.wikipedia.org/wiki/Alucarda",
+      "source_text": "Archived from the original on 21 September 2024. ^ Wilt, David (19 June 2023). \"Where to begin with Mexican macabre cinema\" . British Film Institute . Archived from the original on 19 September 2024. ^ Greene 2007 , p. 91. ^ Di Lauro 2006 , pp. 27–30. ^ Rodríguez-Hernández & Schaefer 2019 , p. 161. ...",
+      "id": "qa_038"
+    },
+    {
+      "question": "How old of honda stablemates have Marex gone on and off the planet. Select from by category. f: 2010-2013 Chevrolet Volcom; Suzuki?",
+      "answer": "2010-2013 Chevrolet Volcom",
+      "question_type": "comparative",
+      "source_chunk_id": "d074922b_chunk_0025",
+      "source_title": "Marc Márquez",
+      "source_url": "https://en.wikipedia.org/wiki/Marc_M%C3%A1rquez",
+      "source_text": "He had made up seven positions from his starting place when championship leader Quartararo crashed into the back of Márquez's bike, taking Quartararo out of the race. Debris from Quartararo's bike stuck in Márquez's wheel, causing him to collide with Takaaki Nakagami , and Márquez too retired from t...",
+      "id": "qa_039"
+    },
+    {
+      "question": "What is referring? Pick your questions(?",
+      "answer": "How old was he when he won three County Football Championship titles from four final appearances between 1949 and 1953 following defeats of Macroom , St. Nicholas' and University College Cork?",
+      "question_type": "comparative",
+      "source_chunk_id": "16284757_chunk_0001",
+      "source_title": "Éamonn Young",
+      "source_url": "https://en.wikipedia.org/wiki/%C3%89amonn_Young",
+      "source_text": "Young's military career saw him line out with Collins Barracks during a golden age for the barracks' football club. He won three County Football Championship titles from four final appearances between 1949 and 1953 following defeats of Macroom , St. Nicholas' and University College Cork . The twilig...",
+      "id": "qa_040"
+    },
+    {
+      "question": "Which quotation did Melcot deem the concept controversial on? Available contextSuffrage status?",
+      "answer": "unanswerable",
+      "question_type": "comparative",
+      "source_chunk_id": "87f2dba4_chunk_0017",
+      "source_title": "In God We Trust",
+      "source_url": "https://en.wikipedia.org/wiki/In_God_We_Trust",
+      "source_text": "Religion [ edit ] In Judaism and Christianity , the official motto \"In God We Trust\" is not found verbatim in any verses from the Bible , but the phrase is translated in similar terms in Psalm 91:2 , in the Old Testament (\"I will say of the LORD, He is my refuge and my fortress: my God; in him will ...",
+      "id": "qa_041"
+    },
+    {
+      "question": "When birds are more alike than to mamillines they lack all-male intercrine pairs and most sequence homology of its polymers. which bird is also monosynovating two sequence locar pairs?",
+      "answer": "chickens [ edit ] The sex chromosomes of birds evolved separately from those of mammals and share very little sequence homology",
+      "question_type": "comparative",
+      "source_chunk_id": "0fe205ec_chunk_0011",
+      "source_title": "Sex-chromosome dosage compensation",
+      "source_url": "https://en.wikipedia.org/wiki/Sex-chromosome_dosage_compensation",
+      "source_text": "Z-specific genes were over-expressed in males when compared to females, and a few genes had equal expression in both male and female Z chromosomes. In chickens, most of the dosage compensated genes exist on the Zp, or short, arm of the chromosome while the non-compensated genes are on the Zq, or lon...",
+      "id": "qa_042"
+    },
+    {
+      "question": "Which is included when one infantrity is divided with three units containing 3 bats instead or an infantruation field?",
+      "answer": "an infantruation field",
+      "question_type": "comparative",
+      "source_chunk_id": "3b8da25a_chunk_0004",
+      "source_title": "1st Division (German Empire)",
+      "source_url": "https://en.wikipedia.org/wiki/1st_Division_(German_Empire)",
+      "source_text": "3 ) 43rd Infantry Regiment \"Duke Karl of Mecklenburg\" (6th East Prussian) ( Infanterie-Regiment Herzog Karl von Mecklenburg (6. Ostpreuß.) Nr. 43 ) 8th Uhlan Regiment \"Count zu Dohna\" (East Prussian) ( Ulanen-Regiment Graf zu Dohna (Ostpreußisches) Nr. 8 ) 1st Field Artillery Brigade ( 1. Feldartill...",
+      "id": "qa_043"
+    },
+    {
+      "question": "Where are most all-terra-bdrunk homes now ern the US government building.? I_NUMRIVE STRIPS MILK COURTAINS LOT TO DEFER STRIMMABILITY RELATED_N_NEGIGUNTS MILANCAKE LONGCATH DRIVED MIKLANCH WINDOW AND HOURBELDO WITCH FRIXBRANDED MILLNUM_CENTR?",
+      "answer": "along MILK COURTAINS WINDOW AND HOURBELDO WITCH FRIXBRANDED MILLNUM_CENT",
+      "question_type": "comparative",
+      "source_chunk_id": "85527cd0_chunk_0015",
+      "source_title": "Chicago Loop",
+      "source_url": "https://en.wikipedia.org/wiki/Chicago_Loop",
+      "source_text": "According to the 2010 census, 29,283 people live in the neighborhoods in or near the Loop. The median sale price for residential real estate was $710,000 in 2005 according to Forbes. In addition to the government, financial, theatre and shopping districts, there are neighborhoods that are also part ...",
+      "id": "qa_044"
+    },
+    {
+      "question": "What building closed at the middle in 1998 - year in 1984 did the building where closed presently lie in good quality?",
+      "answer": "unanswerable",
+      "question_type": "comparative",
+      "source_chunk_id": "3f2419d7_chunk_0021",
+      "source_title": "Places of worship in Burnley",
+      "source_url": "https://en.wikipedia.org/wiki/Places_of_worship_in_Burnley",
+      "source_text": "In 1937 the church absorbed the congregation from \"Beulah\" Primitive Methodist Chapel. When the chapel closed in 1984, the congregation joined Lowerhouse (see above). The church was eventually demolished following fire damage. The Rosehill Mission, on Robert's Row, was founded before 1873. It did no...",
+      "id": "qa_045"
+    },
+    {
+      "question": "Which position was active when it was in transition from Germans?",
+      "answer": "1st Cavalry Brigadier",
+      "question_type": "comparative",
+      "source_chunk_id": "3b8da25a_chunk_0002",
+      "source_title": "1st Division (German Empire)",
+      "source_url": "https://en.wikipedia.org/wiki/1st_Division_(German_Empire)",
+      "source_text": "In 1914, the peacetime organization of the 1st Division was as follows: 1st Infantry Brigade ( 1. Infanterie-Brigade ) 1st Grenadier Regiment \"Crown Prince\" (1st East Prussian) ( Grenadier-Regiment Kronprinz (1. Ostpreußisches) Nr. 1 ) 41st Infantry Regiment \"von Boyen\" (5th East Prussian) ( Infante...",
+      "id": "qa_046"
+    },
+    {
+      "question": "what day % the newly constitutent \" Eston\" were officially established? Possible answers were November, February 10 - 25 1940 and February 11, 1958?",
+      "answer": "February 10 - 25 1940",
+      "question_type": "comparative",
+      "source_chunk_id": "23162ad7_chunk_0000",
+      "source_title": "List of members of the Supreme Soviet of the Estonian Soviet Socialist Republic, 1940–1947",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_members_of_the_Supreme_Soviet_of_the_Estonian_Soviet_Socialist_Republic,_1940%E2%80%931947",
+      "source_text": "This is a list of members of the first legislature of the Supreme Soviet of the Estonian Soviet Socialist Republic which was the Estonian SSR 's legislative chamber between 1940 and 1941, and between 1944 and 1992. In the first phase, the Soviet Union occupied the Republic of Estonia and dissolved t...",
+      "id": "qa_047"
+    },
+    {
+      "question": "In 1909 what happened after WW-2 (Uncentrimental effects) but it has now never turned over io? [Othne determinance?",
+      "answer": "unanswerable",
+      "question_type": "comparative",
+      "source_chunk_id": "63e1cfa9_chunk_0001",
+      "source_title": "History of Ybor City",
+      "source_url": "https://en.wikipedia.org/wiki/History_of_Ybor_City",
+      "source_text": "Ybor City continued to grow and prosper through the 1920s, by which time its factories were producing almost half a billion hand-rolled cigars every year, giving Tampa the nickname of the \"Cigar City\". The coming of the Great Depression in the early 1930s brought a sharp reduction in the worldwide d...",
+      "id": "qa_048"
+    },
+    {
+      "question": "Where else was published \" Religion AND The law In New American Peacemaking ... and Law Not Concifam\" at the end? Source|Considerance] From who? List the author of. |Reference|Twentiorth percent?",
+      "answer": "An Encyclopedia of Personal Belief and Public Policy",
+      "question_type": "comparative",
+      "source_chunk_id": "87f2dba4_chunk_0035",
+      "source_title": "In God We Trust",
+      "source_url": "https://en.wikipedia.org/wiki/In_God_We_Trust",
+      "source_text": "doi : 10.2307/2711109 . ISSN 0003-0678 . JSTOR 2711109 . ^ Burdette, Roger W. (2006). Renaissance of American Coinage, 1905–1908 . Great Falls, Va. : Seneca Mill Press. pp. 193– 195. ISBN 978-0-9768986-1-0 . ^ \"10 Interesting Facts About Theodore Roosevelt\" . Republicanpresidents.net. 2009-03-04. Ar...",
+      "id": "qa_049"
+    },
+    {
+      "question": "Where else in Kentucky may \"Lexians\"' speak on display? Available choices: Which branch of the Christian religion worship?",
+      "answer": "Catholicism",
+      "question_type": "comparative",
+      "source_chunk_id": "87f2dba4_chunk_0044",
+      "source_title": "In God We Trust",
+      "source_url": "https://en.wikipedia.org/wiki/In_God_We_Trust",
+      "source_text": "ABC News . Archived from the original on 2021-05-26 . Retrieved 2021-05-25 . ^ Kelly McCleary (2019-08-11). \" 'In God We Trust' signs to greet Louisiana students in new school year\" . CNN . Archived from the original on 2020-09-13 . Retrieved 2020-05-19 . ^ Torres, Ella (2019-07-26). \"South Dakota p...",
+      "id": "qa_050"
+    },
+    {
+      "question": "How could the death of Pop's children cause an event to end suddenly and violent?",
+      "answer": "[3]. [4]. [5]. [6]. [7].",
+      "question_type": "inferential",
+      "source_chunk_id": "184b3afa_chunk_0025",
+      "source_title": "Kikinda",
+      "source_url": "https://en.wikipedia.org/wiki/Kikinda",
+      "source_text": "stat.gov.rs . Statistical Office of the Republic of Serbia . 25 December 2019 . Retrieved 28 December 2019 . ^ \"Construction of Railway Lines in Slovenia\" . Archived from the original on 27 October 2009 . Retrieved 26 March 2013 . ^ \"ŽELEZNICE SRBIJE – Istorijat železnice\" . Zeleznicesrbije.com. 31 ...",
+      "id": "qa_051"
+    },
+    {
+      "question": "Who lost Best Guest-Around to Blige? I_- The title comes out from how well?",
+      "answer": "Chandra Wilson also received an Outstanding Supporting Actress in a Drama Series",
+      "question_type": "inferential",
+      "source_chunk_id": "fa0c43fc_chunk_0012",
+      "source_title": "Grey's Anatomy season 17",
+      "source_url": "https://en.wikipedia.org/wiki/Grey%27s_Anatomy_season_17",
+      "source_text": "The Drama Show of 2021 and The Female TV star of 2021 both won in their respective categories, while the other two nominations went to Loki and Chase Stokes for Outer Banks , respectively. For the 33rd GLAAD Media Awards Grey's Anatomy received its tenth nomination for Outstanding Drama Series , an ...",
+      "id": "qa_052"
+    },
+    {
+      "question": "where is her mother the book written , once on leaving school?",
+      "answer": "unanswerable",
+      "question_type": "inferential",
+      "source_chunk_id": "10998d50_chunk_0025",
+      "source_title": "La Strada",
+      "source_url": "https://en.wikipedia.org/wiki/La_Strada",
+      "source_text": "The storyline opens with Fellini dreaming he's on a plane with his wife to Los Angeles to receive an Academy Award and meet Walt Disney . The name Zampanò was used as a major character in Mark Z. Danielewski 's novel, House of Leaves (2000), as an old man who wrote film critique while the protagonis...",
+      "id": "qa_053"
+    },
+    {
+      "question": "How big were Cold songs pe at in 2012? Answer: 12\"x18\". 2nd. \"Cronic A.B?",
+      "answer": "89 and 69 respectively on the Billboard Hot 100 and Hot R&B/Hip-Hop Songs and Hot Rap Songs",
+      "question_type": "inferential",
+      "source_chunk_id": "79984995_chunk_0002",
+      "source_title": "Cruel Summer (GOOD Music album)",
+      "source_url": "https://en.wikipedia.org/wiki/Cruel_Summer_(GOOD_Music_album)",
+      "source_text": "The album's artwork was designed by DONDA , West's creative agency. Singles [ edit ] \" Mercy \", a collaboration between Kanye West , Big Sean , Pusha T and 2 Chainz , was released as the album's lead single on April 3, 2012. The track was premiered by Funkmaster Flex 's Hot 97 radio show and was rel...",
+      "id": "qa_054"
+    },
+    {
+      "question": "Which event was playing? [name_former ]: Vol volleyball / Skjrl n/m] Gjer de and Gryden?",
+      "answer": "Soviet Union Volleyball at the 1968 Ciudad de México Summer Games",
+      "question_type": "inferential",
+      "source_chunk_id": "953f8ab2_chunk_0008",
+      "source_title": "List of Olympic medalists in volleyball",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_volleyball",
+      "source_text": "Retrieved 27 August 2010 . ^ Evans, Hilary; Gjerde, Arild; Heijmans, Jeroen; Mallon, Bill ; et al. \"Soviet Union Volleyball at the 1964 Tokyo Summer Games\" . Olympics at Sports-Reference.com . Sports Reference LLC . Archived from the original on 24 September 2010 . Retrieved 20 June 2010 . ^ Evans, ...",
+      "id": "qa_055"
+    },
+    {
+      "question": "Which time came in during 1942? 1941 is that earlier?",
+      "answer": "[2]. [3]. [4]. [5]. [6].",
+      "question_type": "inferential",
+      "source_chunk_id": "f2a6d450_chunk_0014",
+      "source_title": "T-26",
+      "source_url": "https://en.wikipedia.org/wiki/T-26",
+      "source_text": "This work was slowed by delays in the delivery of new equipment and series production of the T-50 did not begin on schedule (planned for 1 June 1941). As a result, factory management decided to resume the production of the T-26, using T-26 hulls, turrets, and other parts already in stock. About 47 T...",
+      "id": "qa_056"
+    },
+    {
+      "question": "how are atom eyes separated bwcwg? and what else?? , an object from water can be delemed and diffuse thwn light a photo. how long as reflected light are trapped from this substance by this device?",
+      "answer": "unanswerable",
+      "question_type": "inferential",
+      "source_chunk_id": "f8f256dc_chunk_0000",
+      "source_title": "Cathode ray tube",
+      "source_url": "https://en.wikipedia.org/wiki/Cathode_ray_tube",
+      "source_text": "Vacuum tube often used to display images \"Picture tube\" redirects here. For the PaintShop Pro image type, see PaintShop Pro § Picture tubes . Cathode ray tube cross section diagram (not to scale) with its focused and deflected electron beam (in green) Oscilloscope cathode ray tube Cutaway rendering ...",
+      "id": "qa_057"
+    },
+    {
+      "question": "What percentage referred kudlifang as Chinese Civilizery? Name the largest to be identified among this literature to most clearly point the main way . ]. N;Y;Z 0?ii;Yn:1&Qi j:6;Xo,ii) uu,J;Qoean rnmi,Io.;Yoong njmi;Zriung?",
+      "answer": "64–67, Lin Meicun, \"The Western Region of the Han-Tang Dynasties and the Chinese Civilization",
+      "question_type": "inferential",
+      "source_chunk_id": "c195175c_chunk_0001",
+      "source_title": "Dunhong",
+      "source_url": "https://en.wikipedia.org/wiki/Dunhong",
+      "source_text": "According to a Tang Dynasty commentator on the Shiji , qilian was a Xiongnu word for \"sky\" – although Xiongnu may also have borrowed the word from an Indo-European language. References [ edit ] ^ Watson, Burton. Trans. 1993. Records of the Grand Historian of China: Han Dynasty II. Translated from th...",
+      "id": "qa_058"
+    },
+    {
+      "question": "how the punties? ||Charrel Redgravham (NFT-Brian DeMorrison / Clemma James ). (@Bringen ; Feb 14th @ 12:30 OPM; CBS, Philadelphia; FOOTPLAY NFL VENGUE ETERNIGENT?",
+      "answer": "Peyton Manning was intercepted by Raiders' safety Charles Woodson",
+      "question_type": "inferential",
+      "source_chunk_id": "3e103aaf_chunk_0014",
+      "source_title": "2015 Denver Broncos season",
+      "source_url": "https://en.wikipedia.org/wiki/2015_Denver_Broncos_season",
+      "source_text": "MDT/1:25 p.m. PDT Game weather : 72 °F (22 °C), sunny Game attendance : 54,500 Referee : John Hussey TV announcers (CBS) : Greg Gumbel , Trent Green and Jamie Erdahl Recap , Gamebook Coming off their win over the Vikings, the Broncos traveled to the O.co Coliseum to face their AFC West division riva...",
+      "id": "qa_059"
+    },
+    {
+      "question": "During his writing career when his work suffered major breakout? Select: (por?",
+      "answer": "(prostate cancer and kidney disease",
+      "question_type": "inferential",
+      "source_chunk_id": "19dd3a17_chunk_0004",
+      "source_title": "Robert L. Rankin",
+      "source_url": "https://en.wikipedia.org/wiki/Robert_L._Rankin",
+      "source_text": "He retired in 2005, though he continued to be involved in academia afterward. His final publication was made in 2012, entitled Kaa ze Ie Wayaje : An Annotated Dictionary of Kaw (Kanza) . Death and legacy [ edit ] After a years-long bout of prostate cancer and kidney disease , Rankin died on February...",
+      "id": "qa_060"
+    },
+    {
+      "question": "Who first entosted an alframandilladore la escudez as an ambassador last?»: http://blognews.harribone.us/2011/0405070817.hg0c7ovc4xldc8br8nc?",
+      "answer": "Daly, Wayne (May 28, 2022) \"CMLL Results: Viernes Espectacular – Mexico City, Mexico (5/27)",
+      "question_type": "inferential",
+      "source_chunk_id": "c5429fd9_chunk_0006",
+      "source_title": "List of Mexican National Trios Champions",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_Mexican_National_Trios_Champions",
+      "source_text": "Consejo Mundial de Lucha Libre (in Spanish). Archived from the original on February 9, 2014 . Retrieved February 19, 2014 . ^ Salazar López, Alexis (April 27, 2015). \"Resultados Arena México Domingo 26 de Abril '15\" . Consejo Mundial de Lucha Libre (in Spanish). Archived from the original on March 1...",
+      "id": "qa_061"
+    },
+    {
+      "question": "Which of \"Sheisi\" series is first broadcast. 1s \" Roh-Kooi-Dok samurai 7m\" & 2)?",
+      "answer": "Rozen Maiden Shinsban",
+      "question_type": "inferential",
+      "source_chunk_id": "cd163b9f_chunk_0005",
+      "source_title": "List of Rozen Maiden volumes",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_Rozen_Maiden_volumes",
+      "source_text": "^ \"Tokyopop Rozen Maiden volume 4\" . Tokyopop . Archived from the original on April 19, 2007 . Retrieved October 15, 2013 . ^ \" Rozen Maiden 5\" (in Japanese). BookOffOnline.co.jp . Retrieved October 15, 2013 . ^ \"Tokyopop Rozen Maiden volume 5\" . Tokyopop . Archived from the original on July 3, 2007...",
+      "id": "qa_062"
+    },
+    {
+      "question": "which of the below communities has greater economic renegedces since the 2000s-17003-2006 jun aceship rrew up its value? Available choicesNo-ansaloping?",
+      "answer": "No-ansaloping",
+      "question_type": "inferential",
+      "source_chunk_id": "7e431c60_chunk_0000",
+      "source_title": "Al Sufouh",
+      "source_url": "https://en.wikipedia.org/wiki/Al_Sufouh",
+      "source_text": "Community in Dubai, United Arab Emirates Al Sufouh ( Arabic : الصفوح ) is a locality in Dubai , United Arab Emirates (UAE). Located in western Dubai, Al Sufouh contains many new real estate developments and is home to several free economic clusters such as Dubai Knowledge Village and Dubai Internet ...",
+      "id": "qa_063"
+    },
+    {
+      "question": "To tell you exactly where the lines started you must answer The following question means to clarify this matter with?",
+      "answer": "Queues at bus stops serving the affected stations were as long as 100 metres (330 ft",
+      "question_type": "inferential",
+      "source_chunk_id": "0a0afe4d_chunk_0005",
+      "source_title": "2024 East–West Line disruption",
+      "source_url": "https://en.wikipedia.org/wiki/2024_East%E2%80%93West_Line_disruption",
+      "source_text": "The disruption caused significant increases in travel times, with The Straits Times reporting that a typical journey from Jurong East to Redhill took approximately 90 minutes instead of the usual 21 minutes. Queues at bus stops serving the affected stations were as long as 100 metres (330 ft). Many ...",
+      "id": "qa_064"
+    },
+    {
+      "question": "What award does John Kerry win?",
+      "answer": "unanswerable",
+      "question_type": "inferential",
+      "source_chunk_id": "b854578b_chunk_0154",
+      "source_title": "Barack Obama",
+      "source_url": "https://en.wikipedia.org/wiki/Barack_Obama",
+      "source_text": "Further reading De Zutter, Hank (December 8, 1995). \"What Makes Obama Run?\" . Chicago Reader . Archived from the original on November 4, 2013 . Retrieved April 25, 2015 . Graff, Garrett M. (November 1, 2006). \"The Legend of Barack Obama\" . Washingtonian . Archived from the original on February 14, 2...",
+      "id": "qa_065"
+    },
+    {
+      "question": "When Nicolae batzary broke away from Rome is what happened last?? The question?",
+      "answer": "[3]. [4]. [5]. [6].",
+      "question_type": "inferential",
+      "source_chunk_id": "32c71e59_chunk_0000",
+      "source_title": "Gheorghe A. Lăzăreanu-Lăzurică",
+      "source_url": "https://en.wikipedia.org/wiki/Gheorghe_A._L%C4%83z%C4%83reanu-L%C4%83zuric%C4%83",
+      "source_text": "Romanian Romani activist, writer and businessman (1892-?) Gheorghe A. Lăzăreanu-Lăzurică or George Lăzurică , also known as Lăzărescu-Lăzurică or Lăzărică (1892 – ?), was a leader of the Romani (Gypsy) community in Romania , also remembered for his support of Romania's interwar far-right. Originally...",
+      "id": "qa_066"
+    },
+    {
+      "question": "Why wasn’tre that problematic according to Nicolae Roubhit?? And where is Romania ? Possible locations in Italy? I mean what in all countries ???",
+      "answer": "[3]. [4]. [5]. [6]. [7]. [8].",
+      "question_type": "inferential",
+      "source_chunk_id": "32c71e59_chunk_0042",
+      "source_title": "Gheorghe A. Lăzăreanu-Lăzurică",
+      "source_url": "https://en.wikipedia.org/wiki/Gheorghe_A._L%C4%83z%C4%83reanu-L%C4%83zuric%C4%83",
+      "source_text": "161. London: Legenda (Modern Humanities Association) , 2007. ISBN 978-1-900755-88-7 ^ \"Știrile săptămânii. Romii iarăși se mișcă\", in Unirea Poporului , Issue 42/1935, p. 7 ^ Achim (2004), p. 156; Dieaconu & Costachie, pp. 181, 186; Klímová-Alexander, p. 173. See also Boangiu, pp. 712–713; Matei, \"R...",
+      "id": "qa_067"
+    },
+    {
+      "question": "When does project start according to jika?",
+      "answer": "September 2013",
+      "question_type": "inferential",
+      "source_chunk_id": "846b0388_chunk_0005",
+      "source_title": "Karachi Circular Railway",
+      "source_url": "https://en.wikipedia.org/wiki/Karachi_Circular_Railway",
+      "source_text": "8 August 2012 : Karachi Metropolitan Corporation Administrator, Muhammad Hussain Syed, stated the study report for restoration of the KCR had been completed and that construction would begin by September 2013. JICA agreed to a Rs. 260 billion (US$900 million) loan to the Karachi Urban Transport Corp...",
+      "id": "qa_068"
+    },
+    {
+      "question": "In general words, What do some residents of if you speak Italian. Choose another way? ||Why do Others hate yaronia? Because?",
+      "answer": "[3]. [4]. None of the above choices",
+      "question_type": "inferential",
+      "source_chunk_id": "63e1cfa9_chunk_0023",
+      "source_title": "History of Ybor City",
+      "source_url": "https://en.wikipedia.org/wiki/History_of_Ybor_City",
+      "source_text": "For all these reasons, Ybor City's WWII generation was the first to leave the area in large numbers since Vicente Martinez-Ybor had first cleared the scrubland in 1885. Urban Renewal [ edit ] Empty lot in Ybor City The period from the late 1950s to the early 1970s saw two seemingly contradictory tre...",
+      "id": "qa_069"
+    },
+    {
+      "question": "how much in size was James Cazaffers films produced between the 1825 and 1900 decade? Select from either case of?",
+      "answer": "300 feet long and The Costers Wedding (1904) 250 feet long",
+      "question_type": "inferential",
+      "source_chunk_id": "ee23d901_chunk_0001",
+      "source_title": "Alf Collins",
+      "source_url": "https://en.wikipedia.org/wiki/Alf_Collins",
+      "source_text": "Some of these films only exist today because they were copyrighted between 1895 to 1912 with the Library of Congress in Washington, D.C., or with National Archives in Kew UK. The National Archives used a single photograph of a scene from the film to copyright and the Library of Congress the whole fi...",
+      "id": "qa_070"
+    },
+    {
+      "question": "What date, as of April 4, 1941, happened closest?",
+      "answer": "[1]. [4]. [3]. [5]. [6]. [7].",
+      "question_type": "inferential",
+      "source_chunk_id": "ee23d901_chunk_0005",
+      "source_title": "Alf Collins",
+      "source_url": "https://en.wikipedia.org/wiki/Alf_Collins",
+      "source_text": "Paul – A Chess Dispute (1903) 80 feet Robert W. Paul – Pocket Boxers (1903) 80 feet Gaumont Co – Dotheboys Hall or Nicholas Nickleby (1903) 225 feet, Paper Print Gaumont Co – The Pickpocket (1903) 300 feet, Paper Print Gaumont Co – The Runaway Match, or Marriage By Motor (1903) 290 feet Gaumont Co –...",
+      "id": "qa_071"
+    },
+    {
+      "question": "what can u rinse to help it not come off too badly after going from one spoon to one meal and after washing hands with someone else and they do?",
+      "answer": "(D). (A). (B). (C). [D].",
+      "question_type": "inferential",
+      "source_chunk_id": "ac0adf25_chunk_0013",
+      "source_title": "Nepalese cuisine",
+      "source_url": "https://en.wikipedia.org/wiki/Nepalese_cuisine",
+      "source_text": "Food is traditionally eaten with the right hand. Touching or eating food with the left hand, which is traditionally used for washing off after stool, is considered unhygienic, and taboo. The hands should be washed before eating, and the hand and mouth should be rinsed after. It is customary to wash ...",
+      "id": "qa_072"
+    },
+    {
+      "question": "Why weren't Anton officials? Possible related actions of that term happened earlier or earlier than 1951. Hypology?",
+      "answer": "earlier than 1951.",
+      "question_type": "inferential",
+      "source_chunk_id": "3c7821f3_chunk_0021",
+      "source_title": "List of governors of Penang",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_governors_of_Penang",
+      "source_text": "He was a Cadet in the Straits Settlements in March 1920. He was attached to Land Office, Penang in May 1920. He served as Acting District officer in Bukit Mertajam in 1923. In March 1932 he worked as Acting First Magistrate, Johor Bahru, before being appointed Deputy Public Prosecutor, Johor, in the...",
+      "id": "qa_073"
+    },
+    {
+      "question": "Why has there never come so soon after people say? Why? Who else might you be following 'eah?",
+      "answer": "[3]. [4]. [5]. [6]. [7].",
+      "question_type": "inferential",
+      "source_chunk_id": "f8f256dc_chunk_0119",
+      "source_title": "Cathode ray tube",
+      "source_url": "https://en.wikipedia.org/wiki/Cathode_ray_tube",
+      "source_text": "^ Yen, William M.; Shionoya, Shigeo; Yamamoto, Hajime (2006). Practical Applications of Phosphors . CRC Press. p. 211. ISBN 978-1-4200-4369-3 . ^ Bakshi, U. A.; Godse, Atul P. (2008). Electronic Devices And Circuits . Technical Publications. p. 38. ISBN 978-81-8431-332-1 . Archived from the original...",
+      "id": "qa_074"
+    },
+    {
+      "question": "Where did Miller make his debut as vocalist in 1966?",
+      "answer": "unanswerable",
+      "question_type": "inferential",
+      "source_chunk_id": "20993d0e_chunk_0004",
+      "source_title": "TV Gospel Time",
+      "source_url": "https://en.wikipedia.org/wiki/TV_Gospel_Time",
+      "source_text": "October 20, 1962 . Retrieved September 4, 2021 . ^ \"Carolina Times - January 12, 1963\" (PDF) . Carolina Times . Retrieved September 7, 2021 . ^ \"Baltimore Sun - October 14, 1962\" . Newspapers . Retrieved September 5, 2021 . ^ \"Billboard - October 23, 1965\" (PDF) . World Radio History . Retrieved Sep...",
+      "id": "qa_075"
+    },
+    {
+      "question": "Accordingly where does this activity lead?",
+      "answer": "(d). [A]. [B]. [C]. [D].",
+      "question_type": "inferential",
+      "source_chunk_id": "f4bb8fe0_chunk_0022",
+      "source_title": "Io (moon)",
+      "source_url": "https://en.wikipedia.org/wiki/Io_(moon)",
+      "source_text": "During a major eruption, lava flows tens or even hundreds of kilometers long can be produced, consisting mostly of basalt silicate lavas with either mafic or ultramafic (magnesium-rich) compositions. As a by-product of this activity, sulfur, sulfur dioxide gas and silicate pyroclastic material (like...",
+      "id": "qa_076"
+    },
+    {
+      "question": "During how several centuries have French had lived there, including? + if Dórberg, but had recently rented out the house + had travelled across town as opposed?",
+      "answer": "had travelled across town as opposed",
+      "question_type": "inferential",
+      "source_chunk_id": "e3e6fe0c_chunk_0007",
+      "source_title": "Nymphaeum (Olympia)",
+      "source_url": "https://en.wikipedia.org/wiki/Nymphaeum_(Olympia)",
+      "source_text": "Whether it was visible in ancient times is unknown. The visible length is 88 m (96 yd), elevation at cistern 50 m (160 ft), elevation at hill entrance 55 m (180 ft). The 20-foot difference gave plenty of momentum to the flow, which must have come jetting impressively out the spouts of the Nymphaeum....",
+      "id": "qa_077"
+    },
+    {
+      "question": "Which researcher collaborated more and less on medical advances over time through peer-a reeachership than they usually collaborate to give scientific and practical results in cancer detection experiments?",
+      "answer": "Samuel Achilefu",
+      "question_type": "inferential",
+      "source_chunk_id": "89d2f857_chunk_0003",
+      "source_title": "Samuel Achilefu",
+      "source_url": "https://en.wikipedia.org/wiki/Samuel_Achilefu",
+      "source_text": "), and Technical Innovation Award 1995 (Mallinckrodt Medical, Inc.). Achilefu is featured in many public media. Representative examples include: Physics Worlds – Optics and Photonics Spotlight SPIE announces 2019 Society Awards Scientists Report Advances in Light-source Medicine to Help Fight Metast...",
+      "id": "qa_078"
+    },
+    {
+      "question": "How can we think that it led to her expulsion after 12 years? Name from text or media: \" Blok tjy en ocnord tje krizinis\". / [ edit \"].?",
+      "answer": "The Dutch parliamentary press chose him as politician of the year",
+      "question_type": "inferential",
+      "source_chunk_id": "7b535353_chunk_0006",
+      "source_title": "Wouter Bos",
+      "source_url": "https://en.wikipedia.org/wiki/Wouter_Bos",
+      "source_text": "Others emphasized a declining confidence in Bos among parts of the electorate that perceived him as \"unreliable\", as reason for this. Bos lost nine seats in the elections, which saw large gains for the main rival of Labour on the left side of the political spectrum, the more radical Socialist Party....",
+      "id": "qa_079"
+    },
+    {
+      "question": "where were they born in October 1930' and released on 1s in 1940'''?",
+      "answer": "unanswerable",
+      "question_type": "inferential",
+      "source_chunk_id": "2d641164_chunk_0015",
+      "source_title": "Aleksandra Izmailovich",
+      "source_url": "https://en.wikipedia.org/wiki/Aleksandra_Izmailovich",
+      "source_text": "As the health of Izmailovich and Spiridonova declined due to typhoid fever , they were taken to a sanatorium in Yalta . Their accommodation, treatment and their medication was not paid for by the authorities, so they were sent money by friends living abroad. Izmailovich soon went back to Tashkent, w...",
+      "id": "qa_080"
+    },
+    {
+      "question": "how did Clausonia interpret divinalism?",
+      "answer": "government recognition of God does not constitute the establishment of a state church as the U.S. constitution's authors intended to prohibit",
+      "question_type": "multi-hop",
+      "source_chunk_id": "87f2dba4_chunk_0020",
+      "source_title": "In God We Trust",
+      "source_url": "https://en.wikipedia.org/wiki/In_God_We_Trust",
+      "source_text": "Clauson (1952), the Supreme Court also wrote that the nation's \"institutions presuppose a Supreme Being\" and that government recognition of God does not constitute the establishment of a state church as the U.S. constitution's authors intended to prohibit. The courts also rely on the notion of \" cer...",
+      "id": "qa_081"
+    },
+    {
+      "question": "What country holds no patents.?",
+      "answer": "unanswerable",
+      "question_type": "multi-hop",
+      "source_chunk_id": "8fd8ecf6_chunk_0058",
+      "source_title": "Latin America",
+      "source_url": "https://en.wikipedia.org/wiki/Latin_America",
+      "source_text": "Film production peaked in 1984–5, with 1986 considered Venezuelan cinema's most successful year by the state, thanks to over 4 million admissions to national films, according to Venezuelanalysis . The Venezuelan capital of Caracas hosted the Ibero-American Forum on Cinematography Integration in 1989...",
+      "id": "qa_082"
+    },
+    {
+      "question": "During how low revenue was GameSoul achieved due to its failure during PlayStation?",
+      "answer": "unanswerable",
+      "question_type": "multi-hop",
+      "source_chunk_id": "89a1ca51_chunk_0010",
+      "source_title": "The Space Bar",
+      "source_url": "https://en.wikipedia.org/wiki/The_Space_Bar",
+      "source_text": "In reaction, SegaSoft split with Rocket Science in early April 1997 and the developer entered a financial downward spiral, closing later that month. This upheaval left The Space Bar \"very much in peril\", wrote Kate Hedstrom of GameSpot . The game was finished months before it shipped; Mike Dornbrook...",
+      "id": "qa_083"
+    },
+    {
+      "question": "For how late the War on Idrive in 1889 ended when Tampa began taking over,? Available citation materials|Not available as available cite choicesAmong what causes the civil conflicts that plague America during Florida this time.Ball?",
+      "answer": "unanswerable",
+      "question_type": "multi-hop",
+      "source_chunk_id": "63e1cfa9_chunk_0032",
+      "source_title": "History of Ybor City",
+      "source_url": "https://en.wikipedia.org/wiki/History_of_Ybor_City",
+      "source_text": "Retrieved August 8, 2010 . ^ \"Cigar Overdose in Ybor City\" . Jack Boulware. January 31, 2007. ^ Lastra 2006 , p. 111. ^ Stacy, Mitch (September 28, 2008). \"Gotti arrest recalls Fla. mob history\" . Usatoday.Com . Retrieved January 16, 2010 . ^ \"Floridian: Cigar city confidential\" . Archived from the ...",
+      "id": "qa_084"
+    },
+    {
+      "question": "How would UQC respond upon losing by 20 points? PossibleOpticonOs:iPart1TheAdjaminAlzh0lrxNom2R2 TheSafarAheadPlayForDecodeWARNThisexitWimb.comForDisccausedApair1PlayVideoVenlu00d4Lr0b0v4Wn1Zo3c4wrWNoFeedThis?",
+      "answer": "The Safar AheadPlayForDecodeWARNThisexitWimb.comForDisccausedApair1PlayVideoVenl",
+      "question_type": "multi-hop",
+      "source_chunk_id": "dcdbf84e_chunk_0004",
+      "source_title": "Oxford Universities Quadball Club",
+      "source_url": "https://en.wikipedia.org/wiki/Oxford_Universities_Quadball_Club",
+      "source_text": "Warwick were their rivals in recent years, so the team looked promising for the year ahead. In January, the team suffered two unfortunate injuries, a broken finger and a broken collarbone, each for a beater, putting both players out of the tournament, and resulting in difficult roster implications. ...",
+      "id": "qa_085"
+    },
+    {
+      "question": "Who directed it first? [FOR SCHOPPIE REVIEW STRACK TWENTICKS/JUNFTY DAUGH].[\"I Cant Go\" [FORD BINGING TO THE DOLLs: THE SOUTHERNITY LOCING SURROON].] Name 3 main films that are set first?",
+      "answer": "Grey's Anatomy",
+      "question_type": "multi-hop",
+      "source_chunk_id": "fa0c43fc_chunk_0036",
+      "source_title": "Grey's Anatomy season 17",
+      "source_url": "https://en.wikipedia.org/wiki/Grey%27s_Anatomy_season_17",
+      "source_text": "NBC Think . Archived from the original on May 23, 2021 . Retrieved May 25, 2021 . ^ Cranz, Alex (November 13, 2020). \"Grey's Anatomy Did Covid-19 and I'm Still Exhausted from Watching It\" . Jezebel . Archived from the original on August 29, 2021 . Retrieved August 28, 2021 . ^ Mason, Charlie (March ...",
+      "id": "qa_086"
+    },
+    {
+      "question": "How much of poverty occurred around 1s half to 1.5 per 1,000 inhabitants? Answers:?",
+      "answer": "not enough information to answer the above question",
+      "question_type": "multi-hop",
+      "source_chunk_id": "8fd8ecf6_chunk_0033",
+      "source_title": "Latin America",
+      "source_url": "https://en.wikipedia.org/wiki/Latin_America",
+      "source_text": "Inequality has been reproduced and transmitted through generations because Latin American political systems allow a differentiated access on the influence that social groups have in the decision-making process, and it responds in different ways to the least favored groups that have less political re...",
+      "id": "qa_087"
+    },
+    {
+      "question": "Who also developed DreamEatrive II in 1994.? Possible origin names: \" wabizhka 2 thálk\" (1998) Windsw?",
+      "answer": "Namco  Capcom",
+      "question_type": "multi-hop",
+      "source_chunk_id": "854711a2_chunk_0012",
+      "source_title": "Production I.G",
+      "source_url": "https://en.wikipedia.org/wiki/Production_I.G",
+      "source_text": "(2001) Sakura Wars 4: Fall in Love, Maidens (2002) Silk to Cotton (2002, character design) Surveillance Kanshisha (2002) Sakura Wars V Episode 0 (2004) Lethal Enforcers 3 (2004) Popolocrois Monogatari II (2000, opening and animated cutscenes) Fire Emblem: Path of Radiance (2005, CG animated cutscene...",
+      "id": "qa_088"
+    },
+    {
+      "question": "who was born and first worked together? where is matalionj living . (pis/pennsylamy?qi/njmo)?",
+      "answer": "New York City , New York , U.S.",
+      "question_type": "multi-hop",
+      "source_chunk_id": "6a6775ad_chunk_0015",
+      "source_title": "Zero waste",
+      "source_url": "https://en.wikipedia.org/wiki/Zero_waste",
+      "source_text": "Retrieved 31 October 2024 . ^ Townsend, W. K. (2010). \"Zero waste: an aspiration or an oxymoron?\". Waste Management & Research . 28 (1): 1– 3. doi : 10.1177/0734242X09356145 . PMID 20065044 . S2CID 209360875 . ^ McDonough, W.; Braungart, M. (2003). \"The cradle-to-cradle alternative\" . Archived from ...",
+      "id": "qa_089"
+    },
+    {
+      "question": "Which is headquartered on Main street outside Santa Crais Plaza Hotel and Holiday Instinct at 4400 North Sunset RW5 1S8, USD6 1H15 8Ah?",
+      "answer": "Helmore, Edward (May 24, 2022) \"Judge rejects Depp bid to dismiss Heard counter-suit as Kate Moss set to testify",
+      "question_type": "multi-hop",
+      "source_chunk_id": "270b59ce_chunk_0043",
+      "source_title": "Depp v. Heard",
+      "source_url": "https://en.wikipedia.org/wiki/Depp_v._Heard",
+      "source_text": "Retrieved May 24, 2022 . ^ Helmore, Edward (May 24, 2022). \"Judge rejects Depp bid to dismiss Heard counter-suit as Kate Moss set to testify\" . The Guardian . Archived from the original on May 25, 2022 . Retrieved May 26, 2022 . ^ \"Depp v Heard: Actress's $45m loss of earnings disputed as court told...",
+      "id": "qa_090"
+    },
+    {
+      "question": "Which authors made the same headlines together during that teen debate with their work in their \"open letter dj?",
+      "answer": "Pal, Mara Luisa",
+      "question_type": "multi-hop",
+      "source_chunk_id": "270b59ce_chunk_0059",
+      "source_title": "Depp v. Heard",
+      "source_url": "https://en.wikipedia.org/wiki/Depp_v._Heard",
+      "source_text": "Time . Archived from the original on June 4, 2022 . Retrieved June 4, 2022 . Grady, Constance (June 2, 2022). \"Johnny Depp's legal victory makes it clear the Me Too backlash has arrived\" . Vox . Archived from the original on June 4, 2022 . Retrieved June 4, 2022 . Drayton, Tiffanie (June 2, 2022). \"...",
+      "id": "qa_091"
+    },
+    {
+      "question": "who lived there when they settled?",
+      "answer": "Malays from Johor, led by the Temenggong who was an officer of the Sultan of Johour",
+      "question_type": "multi-hop",
+      "source_chunk_id": "108de6f7_chunk_0011",
+      "source_title": "Singaporeans",
+      "source_url": "https://en.wikipedia.org/wiki/Singaporeans",
+      "source_text": "IPS Working Papers . 28 : 16– 17 . Retrieved 23 June 2020 . ^ Hack, Karl. \"Records of Ancient Links between India and Singapore\" . National Institute of Education, Singapore. Archived from the original on 26 April 2006 . Retrieved 4 August 2006 . ^ Heidhues 2001 , p. 27 ^ \"《南洋蠡测》 / 颜斯综著\" (PDF) . NUS...",
+      "id": "qa_092"
+    },
+    {
+      "question": "When are football competition league tables published to determine division of football ? Possible spelling changes: FA Cup tables show the division the table will now show the grade?",
+      "answer": "1924–25 Football League  First Division Source: Rules for classification: 1) Points; 2) Goal average; 3) Goals scored Match results [ edit ] Key Results Cup matches",
+      "question_type": "multi-hop",
+      "source_chunk_id": "edce94d5_chunk_0007",
+      "source_title": "1924–25 Cardiff City F.C. season",
+      "source_url": "https://en.wikipedia.org/wiki/1924%E2%80%9325_Cardiff_City_F.C._season",
+      "source_text": "The side finished the campaign in 11th place. Partial league table [ edit ] Main article: 1924–25 Football League § First Division Source: Rules for classification: 1) Points; 2) Goal average; 3) Goals scored Match results [ edit ] Key Results Cup matches [ edit ] FA Cup [ edit ] Cardiff entered the...",
+      "id": "qa_093"
+    },
+    {
+      "question": "To the southern wall which side is it surrounded to give it movement? Answer=Silk Wall of which watercourse should remain surrounded over ditchel?",
+      "answer": "Alpheios was of little help because the water, flowing through limestone its whole distance, was too hard (high in dissolved carbonates) to drink",
+      "question_type": "multi-hop",
+      "source_chunk_id": "e3e6fe0c_chunk_0004",
+      "source_title": "Nymphaeum (Olympia)",
+      "source_url": "https://en.wikipedia.org/wiki/Nymphaeum_(Olympia)",
+      "source_text": "Whether any structures, such as a spring capture, preceded the Nymphaeum is not known. Waste water must have drained to the south toward the confluence of the Kladeos and the Alfeios. The town must have had first options on the Kladeos above Olympia for its municipal water, but that is not known eit...",
+      "id": "qa_094"
+    },
+    {
+      "question": "Which two cities went on trial to fight to claim one Stanley Memorial scholarship from Wisconsin? O?",
+      "answer": "Beloit Snappers",
+      "question_type": "multi-hop",
+      "source_chunk_id": "01b04df4_chunk_0007",
+      "source_title": "Wisconsin Timber Rattlers",
+      "source_url": "https://en.wikipedia.org/wiki/Wisconsin_Timber_Rattlers",
+      "source_text": "The group also purchased the team's ballpark from the Fox Cities Amateur Sports Authority with plans to keep the team in Grand Chute. Major League Baseball assumed control of Minor League Baseball before the 2021 season in a move to increase player salaries, modernize facility standards, and reduce ...",
+      "id": "qa_095"
+    },
+    {
+      "question": "What genre dominated Burster?",
+      "answer": "[3]. [4]. [5].",
+      "question_type": "multi-hop",
+      "source_chunk_id": "55bb1402_chunk_0000",
+      "source_title": "Elliptical poetry",
+      "source_url": "https://en.wikipedia.org/wiki/Elliptical_poetry",
+      "source_text": "Elliptical poetry or Ellipticism is a literary-critical term introduced by Frederick Pottle in The Idiom of Poetry . Pottle's ideas were expounded upon by Robert Penn Warren in his essay \"Pure and Impure Poetry.\" The critic Stephanie Burt repurposed the term in a 1998 essay in Boston Review on Susan...",
+      "id": "qa_096"
+    },
+    {
+      "question": "How many languages currently available should one learn all languages, especially Chinese in classroom trainings? Name them first?Optical answers(maximo 4)+ (x, 2?",
+      "answer": "(maximo 4)",
+      "question_type": "multi-hop",
+      "source_chunk_id": "dcdbf84e_chunk_0009",
+      "source_title": "Oxford Universities Quadball Club",
+      "source_url": "https://en.wikipedia.org/wiki/Oxford_Universities_Quadball_Club",
+      "source_text": "^ \"British Quadball Cup 2025 | QuadballUK\" . QuadballUK – Sport For Anyone . Retrieved 22 May 2025 . ^ \"Cherwell – Quidditch flying high\" . Cherwell . Retrieved 6 May 2014 . Our upcoming match on the 24th November is against Reading. ^ \"Cherwell – British Quidditch Cup review\" . Cherwell . Retrieved...",
+      "id": "qa_097"
+    },
+    {
+      "question": "Who ran this wcuster, then and present it with renaming rights in the early 1990?? Pick another name. Factor unknown. Hypoch. Name 1 other type name they may want to be identified on. Answer>Charactrome. Sentry Number 2). None (a and Bryder3)?",
+      "answer": "Jim Cornette",
+      "question_type": "multi-hop",
+      "source_chunk_id": "f7f50baf_chunk_0000",
+      "source_title": "The Midnight Express (professional wrestling)",
+      "source_url": "https://en.wikipedia.org/wiki/The_Midnight_Express_(professional_wrestling)",
+      "source_text": "Professional wrestling tag team Professional wrestling stable The Midnight Express was the name used by several professional wrestling tag teams of changing members, usually under the management of Jim Cornette . The group started in 1980 with Dennis Condrey and Randy Rose in Southeast Championship ...",
+      "id": "qa_098"
+    },
+    {
+      "question": "Across which continent, what group in the USA lost their influence first? [T>1 [P/v[t-v(a-y(/(p&)?",
+      "answer": "the Cotton Belt was dealt the worst blow",
+      "question_type": "multi-hop",
+      "source_chunk_id": "38160efb_chunk_0005",
+      "source_title": "Panic of 1837",
+      "source_url": "https://en.wikipedia.org/wiki/Panic_of_1837",
+      "source_text": "Connecticut, New Jersey, and Delaware reported the greatest stress in their mercantile districts. In 1837, Vermont's business and credit systems took a hard blow. Vermont had a period of alleviation in 1838 but was hit hard again in 1839–1840. New Hampshire did not feel the effects of the panic as m...",
+      "id": "qa_099"
+    },
+    {
+      "question": "Who is causing some relief to residents and businesses who went after Chiles citizens and resident residents as far as they came? Please i answer just those questions?",
+      "answer": "President Piera announces the closing of \"all land, sea and air borders (...) for the transit of foreign",
+      "question_type": "multi-hop",
+      "source_chunk_id": "55369053_chunk_0004",
+      "source_title": "COVID-19 pandemic in Chile",
+      "source_url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Chile",
+      "source_text": "14 March : 18 new cases are confirmed, increasing the total number of confirmed cases to 61. The first cases are announced the regions of Antofagasta (2 cases), Atacama (1) and Aysén (1), the latter being an 83-year-old British tourist aboard a cruise ship that landed in Puerto Chacabuco after showi...",
+      "id": "qa_100"
+    }
+  ]
+}
