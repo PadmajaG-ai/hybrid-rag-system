@@ -25,7 +25,7 @@ import os
 
 st.set_page_config(
     page_title="Complete RAG Evaluation Dashboard",
-    page_icon="📊",
+    page_icon=" ",
     layout="wide"
 )
 
@@ -43,13 +43,13 @@ def load_results(filename: str):
 
 def show_overview(results):
     """Show overall metrics overview"""
-    st.header("📊 Performance Overview")
+    st.header(" Performance Overview")
     
     method_comp = results.get('method_comparison', {})
     error_analysis = results.get('error_analysis', {})
     
     if not method_comp:
-        st.warning("⚠️ No method comparison data available")
+        st.warning(" No method comparison data available")
         return
     
     # Overall metrics for hybrid (primary method)
@@ -81,7 +81,7 @@ def show_overview(results):
     
     # Success rate and error summary
     if error_analysis:
-        st.subheader("✅ Quality Metrics")
+        st.subheader(" Quality Metrics")
         
         success_rate = error_analysis.get('success_rate', 0)
         hall_stats = error_analysis.get('hallucination_stats', {})
@@ -106,16 +106,16 @@ def show_overview(results):
 
 def show_method_comparison(results):
     """Show method comparison tab"""
-    st.header("⚖️ Method Comparison: Dense vs Sparse vs Hybrid")
+    st.header(" Method Comparison: Dense vs Sparse vs Hybrid")
     
     method_comp = results.get('method_comparison', {})
     
     if not method_comp:
-        st.warning("⚠️ No method comparison data")
+        st.warning(" No method comparison data")
         return
     
     # Comparison table
-    st.subheader("📊 Performance Comparison")
+    st.subheader(" Performance Comparison")
     
     comparison_data = []
     for method in ['dense', 'sparse', 'hybrid']:
@@ -139,7 +139,7 @@ def show_method_comparison(results):
     st.markdown("---")
     
     # Bar charts
-    st.subheader("📊 Metric Comparison")
+    st.subheader(" Metric Comparison")
     
     col1, col2 = st.columns(2)
     
@@ -170,7 +170,7 @@ def show_method_comparison(results):
     st.markdown("---")
     
     # Improvement analysis
-    st.subheader("📈 Improvement Analysis")
+    st.subheader(" Improvement Analysis")
     
     improvements = method_comp.get('improvements', {})
     
@@ -191,12 +191,12 @@ def show_method_comparison(results):
 
 def show_llm_judge(results):
     """Show LLM-as-Judge tab"""
-    st.header("👨‍⚖️ LLM-as-Judge Evaluation")
+    st.header(" LLM-as-Judge Evaluation")
     
     llm_judge = results.get('llm_judge', {})
     
     if not llm_judge:
-        st.warning("⚠️ No LLM-as-Judge data available")
+        st.warning(" No LLM-as-Judge data available")
         st.info("Run: `python llm_judge.py evaluation_results.json --output judge_results.json`")
         return
     
@@ -204,7 +204,7 @@ def show_llm_judge(results):
     overall = avg_scores.get('overall_score', {}).get('mean', 0)
     
     # Overall score gauge
-    st.subheader("🎯 Overall Score")
+    st.subheader(" Overall Score")
     
     col1, col2, col3 = st.columns([2, 1, 1])
     
@@ -291,18 +291,18 @@ def show_llm_judge(results):
 
 def show_hallucination_detection(results):
     """Show hallucination detection tab"""
-    st.header("🚫 Hallucination Detection")
+    st.header(" Hallucination Detection")
     
     error_analysis = results.get('error_analysis', {})
     
     if not error_analysis:
-        st.warning("⚠️ No hallucination detection data available")
+        st.warning(" No hallucination detection data available")
         return
     
     hall_stats = error_analysis.get('hallucination_stats', {})
     
     # Summary metrics
-    st.subheader("📊 Hallucination Summary")
+    st.subheader(" Hallucination Summary")
     
     col1, col2, col3, col4 = st.columns(4)
     
@@ -326,7 +326,7 @@ def show_hallucination_detection(results):
     st.markdown("---")
     
     # Per-question hallucination analysis
-    st.subheader("📋 Per-Question Analysis")
+    st.subheader(" Per-Question Analysis")
     
     per_question = results.get('per_question_results', [])
     
@@ -337,8 +337,8 @@ def show_hallucination_detection(results):
             hall_data.append({
                 'Q#': i,
                 'Question': result['question'][:80] + '...',
-                'Hallucination': '🚫 Yes' if hall_det.get('is_hallucination') else '✅ No',
-                'Faithful': '✅ Yes' if hall_det.get('is_faithful') else '⚠️ No',
+                'Hallucination': ' Yes' if hall_det.get('is_hallucination') else ' No',
+                'Faithful': ' Yes' if hall_det.get('is_faithful') else ' No',
                 'Grounding': hall_det.get('grounding_score', 0),
                 'Explanation': hall_det.get('explanation', '')
             })
@@ -352,9 +352,9 @@ def show_hallucination_detection(results):
         )
         
         if filter_option == "Hallucinations Only":
-            hall_df = hall_df[hall_df['Hallucination'] == '🚫 Yes']
+            hall_df = hall_df[hall_df['Hallucination'] == ' Yes']
         elif filter_option == "Faithful Only":
-            hall_df = hall_df[hall_df['Faithful'] == '✅ Yes']
+            hall_df = hall_df[hall_df['Faithful'] == ' Yes']
         elif filter_option == "Low Grounding (<0.5)":
             hall_df = hall_df[hall_df['Grounding'] < 0.5]
         
@@ -365,7 +365,7 @@ def show_hallucination_detection(results):
         )
         
         # Grounding score distribution
-        st.subheader("📊 Grounding Score Distribution")
+        st.subheader(" Grounding Score Distribution")
         
         grounding_scores = [result.get('hallucination_detection', {}).get('grounding_score', 0) 
                            for result in per_question]
@@ -388,22 +388,22 @@ def show_error_analysis(results):
     error_analysis = results.get('error_analysis', {})
     
     if not error_analysis:
-        st.warning("⚠️ No error analysis data available")
+        st.warning(" No error analysis data available")
         return
     
     error_dist = error_analysis.get('error_distribution', {})
     
     # Summary metrics
-    st.subheader("📊 Error Distribution")
+    st.subheader(" Error Distribution")
     
     # Create distribution data
     categories = {
-        'successful': '✅ Successful',
-        'retrieval_failure': '⚠️ Retrieval Failure',
-        'incomplete': '⚠️ Incomplete',
-        'hallucination': '🚫 Hallucination',
-        'over_generalization': '⚠️ Over-generalization',
-        'factual_error': '❌ Factual Error'
+        'successful': ' Successful',
+        'retrieval_failure': ' Retrieval Failure',
+        'incomplete': ' Incomplete',
+        'hallucination': ' Hallucination',
+        'over_generalization': ' Over-generalization',
+        'factual_error': ' Factual Error'
     }
     
     dist_data = []
@@ -468,7 +468,7 @@ def show_error_analysis(results):
     st.markdown("---")
     
     # Per-question error details
-    st.subheader("📋 Per-Question Error Details")
+    st.subheader(" Per-Question Error Details")
     
     per_question = results.get('per_question_results', [])
     
@@ -520,7 +520,7 @@ def show_questions(results):
         st.warning("⚠️ No per-question results")
         return
     
-    st.subheader("📝 Select a Question")
+    st.subheader(" Select a Question")
     
     question_options = [f"Q{i}: {q['question'][:80]}..." for i, q in enumerate(per_question, 1)]
     selected = st.selectbox("Choose from questions:", question_options)
@@ -534,21 +534,21 @@ def show_questions(results):
     col1, col2 = st.columns([1, 1])
     
     with col1:
-        st.subheader("❓ Question")
+        st.subheader(" Question")
         st.write(result['question'])
         
-        st.subheader("✅ Reference Answer")
+        st.subheader(" Reference Answer")
         st.write(result['ground_truth_answer'])
     
     with col2:
-        st.subheader("💬 Generated Answer")
+        st.subheader(" Generated Answer")
         st.write(result['generated_answer'])
     
     st.markdown("---")
     
     # Method performance
     if 'dense' in result and 'sparse' in result and 'hybrid' in result:
-        st.subheader("⚖️ Method Performance")
+        st.subheader(" Method Performance")
         
         methods_data = []
         for method in ['dense', 'sparse', 'hybrid']:
@@ -598,7 +598,7 @@ def main():
     st.markdown("**All Features: Method Comparison | LLM Judge | Hallucination | Error Analysis**")
     st.markdown("---")
     
-    st.sidebar.header("📂 Configuration")
+    st.sidebar.header(" Configuration")
     
     # Look for files in evaluation_output/
     available = []
@@ -607,7 +607,7 @@ def main():
             available.append(f)
     
     if not available:
-        st.error("❌ No results files found in evaluation_output/!")
+        st.error(" No results files found in evaluation_output/!")
         st.info("Expected files:\n- evaluation_output/evaluation_results.json\n- evaluation_output/judge_results.json")
         st.stop()
     
@@ -619,7 +619,7 @@ def main():
     if not results:
         st.stop()
     
-    st.sidebar.success(f"✅ Loaded: {os.path.basename(selected_file)}")
+    st.sidebar.success(f" Loaded: {os.path.basename(selected_file)}")
     
     # Check for features
     has_method_comp = 'method_comparison' in results
@@ -627,32 +627,32 @@ def main():
     has_error_analysis = 'error_analysis' in results
     
     if has_method_comp:
-        st.sidebar.info("⚖️ Method comparison ✓")
+        st.sidebar.info(" Method comparison ✓")
     if has_llm_judge:
-        st.sidebar.info("👨‍⚖️ LLM Judge ✓")
+        st.sidebar.info(" LLM Judge ✓")
     if has_error_analysis:
-        st.sidebar.info("🔍 Error analysis ✓")
-        st.sidebar.info("🚫 Hallucination detection ✓")
+        st.sidebar.info(" Error analysis ✓")
+        st.sidebar.info(" Hallucination detection ✓")
     
     st.sidebar.markdown("---")
-    st.sidebar.subheader("📊 Dataset")
+    st.sidebar.subheader(" Dataset")
     summary = results.get('summary', {})
     st.sidebar.metric("Questions", summary.get('total_questions', 'N/A'))
     
     # Create tabs
-    tab_names = ["📊 Overview"]
+    tab_names = [" Overview"]
     
     if has_method_comp:
-        tab_names.append("⚖️ Method Comparison")
+        tab_names.append(" Method Comparison")
     
     if has_llm_judge:
-        tab_names.append("👨‍⚖️ LLM Judge")
+        tab_names.append(" LLM Judge")
     
     if has_error_analysis:
-        tab_names.append("🚫 Hallucination")
-        tab_names.append("🔍 Error Analysis")
+        tab_names.append(" Hallucination")
+        tab_names.append(" Error Analysis")
     
-    tab_names.append("💬 Questions")
+    tab_names.append(" Questions")
     
     tabs = st.tabs(tab_names)
     
