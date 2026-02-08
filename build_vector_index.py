@@ -23,7 +23,7 @@ import time
 try:
     from sentence_transformers import SentenceTransformer
 except ImportError:
-    print("❌ Error: sentence-transformers not installed!")
+    print("Error: sentence-transformers not installed!")
     print("Install with: pip install sentence-transformers")
     sys.exit(1)
 
@@ -31,7 +31,7 @@ try:
     import chromadb
     from chromadb.config import Settings
 except ImportError:
-    print("❌ Error: chromadb not installed!")
+    print("Error: chromadb not installed!")
     print("Install with: pip install chromadb")
     sys.exit(1)
 
@@ -47,17 +47,17 @@ class DenseVectorIndexer:
             model_name: Sentence transformer model name
             collection_name: ChromaDB collection name
         """
-        print(f"\n🔧 Initializing Dense Vector Indexer")
+        print(f"\n Initializing Dense Vector Indexer")
         print(f"   Model: {model_name}")
         print(f"   Collection: {collection_name}")
         
         # Load sentence transformer model
-        print(f"\n📥 Loading embedding model: {model_name}")
+        print(f"\n Loading embedding model: {model_name}")
         self.model = SentenceTransformer(model_name)
-        print(f"   ✅ Model loaded! Embedding dimension: {self.model.get_sentence_embedding_dimension()}")
+        print(f"Model loaded! Embedding dimension: {self.model.get_sentence_embedding_dimension()}")
         
         # Initialize ChromaDB client with PERSISTENT storage
-        print(f"\n💾 Initializing ChromaDB client (persistent storage)")
+        print(f"\n Initializing ChromaDB client (persistent storage)")
         self.client = chromadb.PersistentClient(
             path="./chroma_db"
         )
@@ -68,7 +68,7 @@ class DenseVectorIndexer:
         
     def load_corpus(self, corpus_file: str) -> Dict:
         """Load corpus from JSON file"""
-        print(f"\n📂 Loading corpus from: {corpus_file}")
+        print(f"\n Loading corpus from: {corpus_file}")
         
         try:
             with open(corpus_file, 'r', encoding='utf-8') as f:
@@ -77,31 +77,31 @@ class DenseVectorIndexer:
             chunks = corpus.get('chunks', [])
             metadata = corpus.get('metadata', {})
             
-            print(f"   ✅ Loaded {len(chunks)} chunks")
-            print(f"   📊 Total URLs: {metadata.get('total_urls', 'N/A')}")
-            print(f"   📊 Successful URLs: {metadata.get('successful_urls', 'N/A')}")
+            print(f"   Loaded {len(chunks)} chunks")
+            print(f"   Total URLs: {metadata.get('total_urls', 'N/A')}")
+            print(f"   Successful URLs: {metadata.get('successful_urls', 'N/A')}")
             
             return corpus
             
         except FileNotFoundError:
-            print(f"   ❌ File not found: {corpus_file}")
+            print(f" File not found: {corpus_file}")
             sys.exit(1)
         except json.JSONDecodeError:
-            print(f"   ❌ Invalid JSON file")
+            print(f" Invalid JSON file")
             sys.exit(1)
     
     def create_collection(self, reset: bool = False):
         """Create or reset ChromaDB collection"""
         
         if reset:
-            print(f"\n🗑️  Resetting collection: {self.collection_name}")
+            print(f"\n Resetting collection: {self.collection_name}")
             try:
                 self.client.delete_collection(self.collection_name)
-                print(f"   ✅ Old collection deleted")
+                print(f" Old collection deleted")
             except:
                 pass
         
-        print(f"\n📦 Creating collection: {self.collection_name}")
+        print(f"\n Creating collection: {self.collection_name}")
         
         self.collection = self.client.get_or_create_collection(
             name=self.collection_name,
@@ -112,7 +112,7 @@ class DenseVectorIndexer:
             }
         )
         
-        print(f"   ✅ Collection ready")
+        print(f"Collection ready")
     
     def embed_chunks(self, chunks: List[Dict], batch_size: int = 32) -> List[List[float]]:
         """
@@ -125,7 +125,7 @@ class DenseVectorIndexer:
         Returns:
             List of embedding vectors
         """
-        print(f"\n🧮 Creating embeddings for {len(chunks)} chunks")
+        print(f"\nCreating embeddings for {len(chunks)} chunks")
         print(f"   Batch size: {batch_size}")
         print(f"   Estimated time: {len(chunks) / batch_size * 0.5:.1f} seconds")
         
@@ -154,8 +154,8 @@ class DenseVectorIndexer:
                 print(f"   Progress: {progress}/{len(texts)} | ETA: {remaining:.0f}s")
         
         elapsed = time.time() - start_time
-        print(f"   ✅ Created {len(embeddings)} embeddings in {elapsed:.1f}s")
-        print(f"   ⚡ Rate: {len(embeddings) / elapsed:.1f} embeddings/second")
+        print(f" Created {len(embeddings)} embeddings in {elapsed:.1f}s")
+        print(f" Rate: {len(embeddings) / elapsed:.1f} embeddings/second")
         
         return embeddings
     
@@ -168,7 +168,7 @@ class DenseVectorIndexer:
             embeddings: List of embedding vectors
             batch_size: Batch size for indexing
         """
-        print(f"\n💾 Indexing {len(chunks)} chunks in ChromaDB")
+        print(f"\n Indexing {len(chunks)} chunks in ChromaDB")
         print(f"   Batch size: {batch_size}")
         
         start_time = time.time()
@@ -204,11 +204,11 @@ class DenseVectorIndexer:
                 print(f"   Progress: {progress}/{len(chunks)}")
         
         elapsed = time.time() - start_time
-        print(f"   ✅ Indexed {len(chunks)} chunks in {elapsed:.1f}s")
+        print(f"   Indexed {len(chunks)} chunks in {elapsed:.1f}s")
         
         # Verify
         count = self.collection.count()
-        print(f"   ✅ Collection now contains {count} documents")
+        print(f"   Collection now contains {count} documents")
     
     def build_index(self, corpus_file: str, reset: bool = True, batch_size: int = 32):
         """
@@ -238,9 +238,9 @@ class DenseVectorIndexer:
         
         # Summary
         print("\n" + "="*70)
-        print("✅ INDEXING COMPLETE")
+        print(" INDEXING COMPLETE")
         print("="*70)
-        print(f"📊 Statistics:")
+        print(f" Statistics:")
         print(f"   Total chunks indexed: {len(chunks)}")
         print(f"   Embedding dimension: {len(embeddings[0])}")
         print(f"   Collection name: {self.collection_name}")
@@ -254,7 +254,7 @@ class DenseVectorIndexer:
 def test_retrieval(collection, model, query: str, top_k: int = 5):
     """Test retrieval with a sample query"""
     
-    print(f"\n🔍 Testing Retrieval")
+    print(f"\n Testing Retrieval")
     print(f"   Query: '{query}'")
     print(f"   Top-K: {top_k}")
     
@@ -268,7 +268,7 @@ def test_retrieval(collection, model, query: str, top_k: int = 5):
     )
     
     # Display results
-    print(f"\n📄 Top {top_k} Results:")
+    print(f"\n Top {top_k} Results:")
     print("-" * 70)
     
     for i in range(len(results['ids'][0])):
@@ -326,8 +326,8 @@ def main():
             top_k=args.top_k
         )
     
-    print(f"\n✅ Done! Your vector index is ready.")
-    print(f"\n💡 To use this index:")
+    print(f"\n Done! Your vector index is ready.")
+    print(f"\n To use this index:")
     print(f"   1. Load collection: client.get_collection('{args.collection}')")
     print(f"   2. Query with: collection.query(query_embeddings=[...], n_results=K)")
     print(f"   3. See query_vector_index.py for complete examples")
@@ -337,10 +337,10 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n\n❌ Interrupted by user.")
+        print("\n\n Interrupted by user.")
         sys.exit(0)
     except Exception as e:
-        print(f"\n\n❌ Error: {e}")
+        print(f"\n\n Error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)
