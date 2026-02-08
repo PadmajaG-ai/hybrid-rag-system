@@ -2,7 +2,7 @@
 Hybrid RAG System with Reciprocal Rank Fusion (RRF)
 ====================================================
 
-COMPLETE VERSION with Answer Generation
+
 
 Combines:
 - Dense retrieval (all-MiniLM-L6-v2 + ChromaDB)
@@ -23,20 +23,20 @@ from collections import defaultdict
 try:
     from sentence_transformers import SentenceTransformer
 except ImportError:
-    print("❌ sentence-transformers not installed!")
+    print("sentence-transformers not installed!")
     sys.exit(1)
 
 try:
     import chromadb
 except ImportError:
-    print("❌ chromadb not installed!")
+    print(" chromadb not installed!")
     sys.exit(1)
 
 try:
     from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
     import torch
 except ImportError:
-    print("❌ transformers not installed!")
+    print(" torch not installed!")
     sys.exit(1)
 
 from build_bm25_index import BM25Indexer
@@ -65,32 +65,32 @@ class HybridRAGSystem:
             rrf_k: RRF constant (default: 60)
             generator_model: Model for answer generation
         """
-        print("\n🚀 Initializing Hybrid RAG System")
+        print("\n Initializing Hybrid RAG System")
         print("="*70)
         
         self.rrf_k = rrf_k
         
         # Load dense retrieval (ChromaDB + all-MiniLM-L6-v2)
-        print("\n📥 Loading dense retrieval system...")
+        print("\n Loading dense retrieval system...")
         self.dense_model = SentenceTransformer('all-MiniLM-L6-v2')
         self.chroma_client = chromadb.PersistentClient(path="./chroma_db")
         self.chroma_collection = self.chroma_client.get_collection(chroma_collection_name)
-        print(f"   ✅ Dense: {self.chroma_collection.count()} chunks indexed")
+        print(f" Dense: {self.chroma_collection.count()} chunks indexed")
         
         # Load sparse retrieval (BM25)
-        print("\n📥 Loading sparse retrieval system...")
+        print("\n Loading sparse retrieval system...")
         self.bm25_indexer = BM25Indexer.load_index(bm25_index_file)
-        print(f"   ✅ Sparse: {len(self.bm25_indexer.chunks)} chunks indexed")
+        print(f" Sparse: {len(self.bm25_indexer.chunks)} chunks indexed")
         
         # Load answer generator (Flan-T5)
-        print(f"\n📥 Loading answer generator ({generator_model})...")
+        print(f"\n Loading answer generator ({generator_model})...")
         self.tokenizer = AutoTokenizer.from_pretrained(generator_model)
         self.generator = AutoModelForSeq2SeqLM.from_pretrained(generator_model)
         self.generator.eval()  # Set to evaluation mode
-        print(f"   ✅ Generator loaded!")
+        print(f" Generator loaded!")
         
         print("\n" + "="*70)
-        print("✅ Hybrid system ready!")
+        print(" Hybrid system ready!")
         print(f"   RRF constant k = {self.rrf_k}")
         print("="*70)
     
@@ -208,28 +208,28 @@ class HybridRAGSystem:
             Dictionary with all results and metadata
         """
         
-        print(f"\n🔍 Hybrid Search: '{query}'")
+        print(f"\n Hybrid Search: '{query}'")
         print(f"   Retrieving top-{top_k_per_method} from each method")
         print(f"   Final top-{top_n_final} via RRF (k={self.rrf_k})")
         
         # Dense retrieval
-        print("\n   📊 Dense retrieval...")
+        print("\n   Dense retrieval...")
         dense_results = self.dense_retrieval(query, top_k=top_k_per_method)
-        print(f"      ✅ Retrieved {len(dense_results)} chunks")
+        print(f"    Retrieved {len(dense_results)} chunks")
         
         # Sparse retrieval
-        print("\n   📋 Sparse retrieval...")
+        print("\n   Sparse retrieval...")
         sparse_results = self.sparse_retrieval(query, top_k=top_k_per_method)
-        print(f"      ✅ Retrieved {len(sparse_results)} chunks")
+        print(f"      Retrieved {len(sparse_results)} chunks")
         
         # RRF fusion
-        print(f"\n   🔗 Reciprocal Rank Fusion...")
+        print(f"\n   Reciprocal Rank Fusion...")
         hybrid_results = self.reciprocal_rank_fusion(
             dense_results, 
             sparse_results, 
             top_n=top_n_final
         )
-        print(f"      ✅ Final top-{len(hybrid_results)} chunks")
+        print(f" Final top-{len(hybrid_results)} chunks")
         
         return {
             'query': query,
@@ -280,7 +280,7 @@ class HybridRAGSystem:
         """
         Generate answer using Flan-T5 based on question and context
         
-        THIS IS THE MISSING METHOD THAT WAS CAUSING THE ERROR!
+        
         
         Args:
             question: User's question
@@ -352,12 +352,12 @@ Answer:"""
         
         # Generate answer
         if verbose:
-            print("\n💭 Generating answer...")
+            print("\n Generating answer...")
         
         answer = self.generate_answer(question, context)
         
         if verbose:
-            print(f"   ✅ Answer generated!")
+            print(f"  Answer generated!")
         
         return {
             'question': question,
@@ -375,14 +375,14 @@ def print_results(search_results: Dict):
     hybrid_results = search_results['hybrid_results']
     
     print("\n" + "="*70)
-    print("🎯 HYBRID SEARCH RESULTS (RRF)")
+    print(" HYBRID SEARCH RESULTS (RRF)")
     print("="*70)
     print(f"Query: '{query}'")
     print(f"Top {len(hybrid_results)} chunks after fusion")
     print("="*70)
     
     for result in hybrid_results:
-        print(f"\n📄 Rank #{result['rrf_rank']} | RRF Score: {result['rrf_score']:.6f}")
+        print(f"\n Rank #{result['rrf_rank']} | RRF Score: {result['rrf_score']:.6f}")
         print(f"   Title: {result['metadata']['title']}")
         print(f"   Chunk ID: {result['chunk_id']}")
         
@@ -399,7 +399,7 @@ def print_results(search_results: Dict):
             print(f"   Sparse: Not in top-K")
         
         text_preview = result['text'][:200] + "..." if len(result['text']) > 200 else result['text']
-        print(f"\n   📝 Text: {text_preview}")
+        print(f"\n  Text: {text_preview}")
         print("-" * 70)
 
 
@@ -426,7 +426,7 @@ def main():
     
     # Print generated answer
     print("\n" + "="*70)
-    print("💬 GENERATED ANSWER")
+    print(" GENERATED ANSWER")
     print("="*70)
     print(f"\n{result['answer']}\n")
     print("="*70)
@@ -436,8 +436,8 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n\n⚠️ Interrupted by user.")
+        print("\n\n Interrupted by user.")
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\n Error: {e}")
         import traceback
         traceback.print_exc()
