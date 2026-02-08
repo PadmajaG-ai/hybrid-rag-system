@@ -61,7 +61,7 @@ class AutoRandomURLGenerator:
             data = response.json()
             return data['query']['random']
         except Exception as e:
-            print(f"❌ Error fetching random pages: {e}")
+            print(f" Error fetching random pages: {e}")
             return []
 
     def get_page_content(self, page_id: int) -> Dict:
@@ -112,7 +112,7 @@ class AutoRandomURLGenerator:
         initial_count = len(valid_urls)
 
         if initial_count >= self.target_count:
-            print(f"\n✅ Already have {initial_count} URLs (target: {self.target_count})")
+            print(f"\n Already have {initial_count} URLs (target: {self.target_count})")
             print("No additional URLs needed.")
             return valid_urls
 
@@ -139,7 +139,7 @@ class AutoRandomURLGenerator:
 
             if retry_round > 1:
                 print(f"\n{'='*70}")
-                print(f"🔄 Auto-retry Round {retry_round}")
+                print(f" Auto-retry Round {retry_round}")
                 print(f"Current: {current_count} | Still need: {remaining}")
                 print(f"{'='*70}\n")
 
@@ -155,13 +155,13 @@ class AutoRandomURLGenerator:
                 random_pages = self.get_random_pages(batch_size)
 
                 if not random_pages:
-                    print("⚠️  Failed to fetch random pages. Retrying in 2 seconds...")
+                    print("  Failed to fetch random pages. Retrying in 2 seconds...")
                     time.sleep(2)
                     attempts += batch_size
                     consecutive_failures += 1
 
                     if consecutive_failures >= 5:
-                        print(f"\n⚠️  Network issues detected. Waiting 5 seconds before retry...")
+                        print(f"\n  Network issues detected. Waiting 5 seconds before retry...")
                         time.sleep(5)
                         consecutive_failures = 0  # Reset and try again
                         continue
@@ -207,7 +207,7 @@ class AutoRandomURLGenerator:
                     total_new = len(valid_urls) - initial_count
                     rate = total_new / elapsed if elapsed > 0 else 0
                     eta = (self.target_count - len(valid_urls)) / rate if rate > 0 else 0
-                    print(f"\n⏱️  Progress: {len(valid_urls)}/{self.target_count} | "
+                    print(f"\n Progress: {len(valid_urls)}/{self.target_count} | "
                           f"Total new: {total_new} | ETA: {eta:.0f}s\n")
                     last_count = len(valid_urls)
 
@@ -219,13 +219,13 @@ class AutoRandomURLGenerator:
                 # Save progress after each round
                 self.save_to_json(valid_urls, 'random_urls.json', silent=True)
             else:
-                print(f"\n⚠️  Round {retry_round}: No progress made. Waiting 3 seconds before retry...")
+                print(f"\n  Round {retry_round}: No progress made. Waiting 3 seconds before retry...")
                 time.sleep(3)
 
         total_time = time.time() - overall_start_time
         total_new = len(valid_urls) - initial_count
 
-        print(f"\n🎉 TARGET REACHED! Added {total_new} new URLs in {total_time:.1f} seconds")
+        print(f"\n TARGET REACHED! Added {total_new} new URLs in {total_time:.1f} seconds")
         print(f"Total rounds needed: {retry_round}")
 
         return valid_urls
@@ -246,7 +246,7 @@ class AutoRandomURLGenerator:
             json.dump(output, f, indent=2, ensure_ascii=False)
 
         if not silent:
-            print(f"✅ Saved {len(urls)} URLs to {filename}")
+            print(f" Saved {len(urls)} URLs to {filename}")
 
     def save_to_txt(self, urls: List[Dict], filename: str = 'random_urls.txt'):
         """Save URLs to simple text file"""
@@ -258,18 +258,18 @@ class AutoRandomURLGenerator:
             for item in urls:
                 f.write(f"{item['url']}\n")
 
-        print(f"✅ Saved {len(urls)} URLs to {filename}")
+        print(f" Saved {len(urls)} URLs to {filename}")
 
     def print_statistics(self, urls: List[Dict]):
         """Print detailed statistics"""
         print("\n" + "=" * 70)
-        print("📊 STATISTICS")
+        print(" STATISTICS")
         print("=" * 70)
         print(f"Total URLs: {len(urls)}")
 
         if urls:
             word_counts = [url['word_count'] for url in urls]
-            print(f"\n📝 Word Count:")
+            print(f"\n Word Count:")
             print(f"   Minimum: {min(word_counts)} words")
             print(f"   Maximum: {max(word_counts)} words")
             print(f"   Average: {sum(word_counts) / len(urls):.0f} words")
@@ -277,9 +277,9 @@ class AutoRandomURLGenerator:
             # Check if all meet requirement
             below_min = [url for url in urls if url['word_count'] < self.min_words]
             if below_min:
-                print(f"\n⚠️  {len(below_min)} URLs below {self.min_words} words (should not happen!)")
+                print(f"\n  {len(below_min)} URLs below {self.min_words} words (should not happen!)")
             else:
-                print(f"\n✅ All URLs meet the {self.min_words} word minimum!")
+                print(f"\n All URLs meet the {self.min_words} word minimum!")
 
     def run(self):
         """Main execution - fully automated with auto-retry"""
@@ -293,13 +293,13 @@ class AutoRandomURLGenerator:
             backup_name = f'random_urls_backup_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
             import shutil
             shutil.copy('random_urls.json', backup_name)
-            print(f"💾 Backed up existing file to {backup_name}")
+            print(f" Backed up existing file to {backup_name}")
 
         # Generate URLs (will auto-retry until target is reached)
         random_urls = self.generate_urls(batch_size=50)
 
         # Save final results to files
-        print("\n💾 Saving final files...")
+        print("\n Saving final files...")
         self.save_to_json(random_urls, 'random_urls.json')
         self.save_to_txt(random_urls, 'random_urls.txt')
 
@@ -307,13 +307,13 @@ class AutoRandomURLGenerator:
         self.print_statistics(random_urls)
 
         print("\n" + "=" * 70)
-        print("📁 FILES CREATED/UPDATED")
+        print(" FILES CREATED/UPDATED")
         print("=" * 70)
-        print("  ✅ random_urls.json (structured data with metadata)")
-        print("  ✅ random_urls.txt (plain text, one URL per line)")
+        print("   random_urls.json (structured data with metadata)")
+        print("   random_urls.txt (plain text, one URL per line)")
 
         print("\n" + "=" * 70)
-        print("✅ DONE! All URLs generated successfully.")
+        print("URLs generated successfully.")
         print("=" * 70)
 
 
@@ -323,10 +323,10 @@ def main():
         generator = AutoRandomURLGenerator(min_words=200, target_count=300)
         generator.run()
     except KeyboardInterrupt:
-        print("\n\n❌ Interrupted by user. Exiting...")
+        print("\n\n Interrupted by user. Exiting...")
         print("Your progress has been saved. Run the script again to continue.")
     except Exception as e:
-        print(f"\n\n❌ Error: {e}")
+        print(f"\n\n Error: {e}")
         import traceback
         traceback.print_exc()
         print("\nYou can run this script again to retry.")
