@@ -61,12 +61,12 @@ class CompletePipeline:
         print("\n" + "="*70)
         print(f"{Colors.BOLD}{Colors.CYAN}🚀 COMPLETE RAG EVALUATION PIPELINE{Colors.ENDC}")
         print("="*70)
-        print(f"📁 Input: {Colors.BLUE}{self.qa_pairs_file}{Colors.ENDC}")
-        print(f"📂 Output: {Colors.BLUE}{self.output_dir}/{Colors.ENDC}")
-        print(f"⏰ Started: {Colors.GREEN}{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}{Colors.ENDC}")
+        print(f" Input: {Colors.BLUE}{self.qa_pairs_file}{Colors.ENDC}")
+        print(f" Output: {Colors.BLUE}{self.output_dir}/{Colors.ENDC}")
+        print(f" Started: {Colors.GREEN}{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}{Colors.ENDC}")
         print("="*70 + "\n")
         
-        print("📋 Pipeline Steps:")
+        print("   Pipeline Steps:")
         print("   [1/4] Evaluation (Method Comparison + Hallucination + Error Analysis)")
         print("   [2/4] LLM-as-Judge (Factual, Complete, Relevant, Coherent)")
         print("   [3/4] Generate Reports (HTML, CSV, JSON)")
@@ -388,7 +388,7 @@ class CompletePipeline:
         
         print(f"\n{Colors.BOLD}Results:{Colors.ENDC}")
         print(f"   ✓ {success_count}/{total_steps} steps completed")
-        print(f"   ⏱️  Total time: {total_elapsed/60:.1f} minutes")
+        print(f"     Total time: {total_elapsed/60:.1f} minutes")
         
         print(f"\n{Colors.BOLD}Generated Files:{Colors.ENDC}")
         
@@ -405,7 +405,7 @@ class CompletePipeline:
             else:
                 print(f"   ✗ {name:20s} (not created)")
         
-        print(f"\n{Colors.BOLD}🎯 Next Steps:{Colors.ENDC}")
+        print(f"\n{Colors.BOLD} Next Steps:{Colors.ENDC}")
         print(f"   1. View dashboard:")
         print(f"      {Colors.CYAN}streamlit run evaluation_dashboard_with_methods.py{Colors.ENDC}")
         print(f"\n   2. Take 4 screenshots:")
@@ -428,7 +428,7 @@ class CompletePipeline:
         # Step 1: Complete evaluation (CRITICAL)
         if not self.step_1_evaluation():
             print("\n" + "="*70)
-            print(f"{Colors.RED}❌ PIPELINE FAILED AT STEP 1{Colors.ENDC}")
+            print(f"{Colors.RED} PIPELINE FAILED AT STEP 1{Colors.ENDC}")
             print("="*70)
             print("Evaluation failed - cannot continue.")
             return False
@@ -467,17 +467,17 @@ def check_requirements():
     missing_data = [f for f in required_data if not os.path.exists(f)]
     
     if missing_scripts or missing_data:
-        print(f"\n{Colors.RED}❌ Missing required files:{Colors.ENDC}\n")
+        print(f"\n{Colors.RED} Missing required files:{Colors.ENDC}\n")
         
         if missing_scripts:
             print(f"{Colors.BOLD}Missing scripts:{Colors.ENDC}")
             for file in missing_scripts:
-                print(f"   ✗ {file}")
+                print(f"   {file}")
         
         if missing_data:
             print(f"\n{Colors.BOLD}Missing data/indices:{Colors.ENDC}")
             for file in missing_data:
-                print(f"   ✗ {file}")
+                print(f"   {file}")
         
         return False
     
@@ -497,7 +497,7 @@ def main():
     
     # Check input file
     if not os.path.exists(args.qa_pairs_file):
-        print(f"\n{Colors.RED}❌ Input file not found: {args.qa_pairs_file}{Colors.ENDC}")
+        print(f"\n{Colors.RED} Input file not found: {args.qa_pairs_file}{Colors.ENDC}")
         sys.exit(1)
     
     # Run pipeline
@@ -511,10 +511,10 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print(f"\n\n{Colors.YELLOW}⚠️  Pipeline interrupted by user.{Colors.ENDC}")
+        print(f"\n\n{Colors.YELLOW} Pipeline interrupted by user.{Colors.ENDC}")
         sys.exit(1)
     except Exception as e:
-        print(f"\n{Colors.RED}❌ Pipeline error: {e}{Colors.ENDC}")
+        print(f"\n{Colors.RED} Pipeline error: {e}{Colors.ENDC}")
         import traceback
         traceback.print_exc()
         sys.exit(1)
