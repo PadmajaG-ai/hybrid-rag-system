@@ -25,7 +25,7 @@ try:
     import torch
     import numpy as np
 except ImportError as e:
-    print(f"❌ Missing dependency: {e}")
+    print(f" Missing dependency: {e}")
     sys.exit(1)
 
 
@@ -299,14 +299,14 @@ Score and brief explanation:""",
         """Print evaluation summary"""
         
         print(f"\n{'='*70}")
-        print("📊 LLM-AS-JUDGE SUMMARY")
+        print(" LLM-AS-JUDGE SUMMARY")
         print(f"{'='*70}")
         
-        print(f"\n   📊 Factual Accuracy: {avg_scores['factual_accuracy']['mean']:.2f}/5.0")
-        print(f"\n   📊 Completeness: {avg_scores['completeness']['mean']:.2f}/5.0")
-        print(f"   📊 Relevance: {avg_scores['relevance']['mean']:.2f}/5.0")
-        print(f"   📊 Coherence: {avg_scores['coherence']['mean']:.2f}/5.0")
-        print(f"\n   🎯 Overall Score: {avg_scores['overall_score']['mean']:.2f}/5.0")
+        print(f"\n   Factual Accuracy: {avg_scores['factual_accuracy']['mean']:.2f}/5.0")
+        print(f"\n   Completeness: {avg_scores['completeness']['mean']:.2f}/5.0")
+        print(f"     Relevance: {avg_scores['relevance']['mean']:.2f}/5.0")
+        print(f"     Coherence: {avg_scores['coherence']['mean']:.2f}/5.0")
+        print(f"\n   Overall Score: {avg_scores['overall_score']['mean']:.2f}/5.0")
     
     def _get_methodology(self) -> str:
         """Return methodology description"""
@@ -361,7 +361,7 @@ def main():
     args = parser.parse_args()
     
     # Load evaluation results
-    print(f"\n📂 Loading evaluation results from {args.results_file}...")
+    print(f"\n Loading evaluation results from {args.results_file}...")
     with open(args.results_file, 'r', encoding='utf-8') as f:
         eval_results = json.load(f)
     print(f"   ✅ Loaded!")
@@ -379,14 +379,14 @@ def main():
     }
     
     # Save (now with JSON-compatible types!)
-    print(f"\n💾 Saving results to {args.output}...")
+    print(f"\n Saving results to {args.output}...")
     with open(args.output, 'w', encoding='utf-8') as f:
         json.dump(combined, f, indent=2, ensure_ascii=False)
-    print(f"   ✅ Saved!")
+    print(f"   Saved!")
     
-    print(f"\n✅ LLM-as-Judge evaluation complete!")
-    print(f"\n📊 Results saved to: {args.output}")
-    print(f"\n💡 View results with:")
+    print(f"\n LLM-as-Judge evaluation complete!")
+    print(f"\n Results saved to: {args.output}")
+    print(f"\n View results with:")
     print(f"   python view_evaluation.py {args.output}")
 
 
@@ -394,8 +394,8 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n\n⚠️  Interrupted by user.")
+        print("\n\n  Interrupted by user.")
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\n Error: {e}")
         import traceback
         traceback.print_exc()
