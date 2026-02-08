@@ -243,7 +243,7 @@ def main():
     st.markdown("""
     **Dense** (all-MiniLM-L6-v2) + **Sparse** (BM25) + **RRF** + **Flan-T5-base**
     
-    ✨ *Flan-T5 is instruction-tuned for better question answering!*
+     *Flan-T5 is instruction-tuned for better question answering!*
     """)
     
     # Sidebar
