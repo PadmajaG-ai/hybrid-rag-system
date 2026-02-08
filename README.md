@@ -31,17 +31,17 @@ cd hybrid-rag-system
 pip install -r requirements.txt
 
 # Build indices (one-time)
-python "Index Building/build_vector_index.py" "Generated Data/corpus_chunks.json"
-python "Index Building/build_bm25_index.py" "Generated Data/corpus_chunks.json"
+python build_vector_index.py corpus_chunks.json
+python build_bm25_index.py corpus_chunks.json
 
 # Run demo
-streamlit run "RAG System/rag_ui_flan.py"
+streamlit run rag_ui_flan.py
 
 # Run evaluation
-python "Evaluation/run_complete_evaluation.py" "Generated Data/qa_pairs.json"
+python run_complete_evaluation.py qa_pairs.json
 
 # View dashboard
-streamlit run "Evaluation/evaluation_dashboard_with_methods.py"
+streamlit evaluation_dashboard_with_methods.py
 ```
 
 ---
