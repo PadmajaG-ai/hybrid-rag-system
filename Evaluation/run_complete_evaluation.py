@@ -263,14 +263,41 @@ class CompletePipeline:
             return False
     
     def step_3_generate_reports(self):
-        """Generate reports (optional)"""
+        """Generate reports (HTML, CSV, etc)"""
         self.print_step_header(3, "Generate Reports")
         
-        print("Skipping report generation (use dashboard instead)")
-        print("   Run: streamlit run evaluation_dashboard_with_methods.py")
+        print("Generating comprehensive reports (HTML, CSV):\n")
         
-        self.step_results['reports'] = True
-        return True
+        step_start = time.time()
+        
+        cmd = [
+            sys.executable,
+            "generate_reports.py",
+            self.judge_results_file if os.path.exists(self.judge_results_file) else self.eval_results_file,
+            "--output-dir", self.output_dir
+        ]
+        
+        try:
+            result = subprocess.run(cmd, capture_output=False, check=True)
+            
+            elapsed = time.time() - step_start
+            self.step_times['reports'] = elapsed
+            
+            self.print_success(f"Reports generated! ({elapsed:.1f} seconds)")
+            self.print_success(f"Files saved to: {self.output_dir}/")
+            self.step_results['reports'] = True
+            return True
+            
+        except subprocess.CalledProcessError as e:
+            elapsed = time.time() - step_start
+            self.step_times['reports'] = elapsed
+            self.print_warning(f"Report generation failed after {elapsed:.1f} seconds")
+            return False
+        except Exception as e:
+            elapsed = time.time() - step_start
+            self.step_times['reports'] = elapsed
+            self.print_warning(f"Report generation error: {e}")
+            return False
     
     def step_4_create_summary(self):
         """Create summary"""

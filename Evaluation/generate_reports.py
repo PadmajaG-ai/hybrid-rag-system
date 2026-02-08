@@ -164,13 +164,28 @@ class ReportGenerator:
     def _generate_summary_section(self) -> str:
         """Generate summary section"""
         
-        mrr_score = self.results['mandatory_metric']['score']
-        f1_score = self.results['custom_metric_1']['metrics']['f1_score']
-        grounding = self.results['custom_metric_2']['metrics']['grounding_score']
+        # Handle both old and new result formats
+        if 'mandatory_metric' in self.results:
+            mrr_score = self.results['mandatory_metric']['score']
+            f1_score = self.results['custom_metric_1']['metrics']['f1_score']
+            grounding = self.results['custom_metric_2']['metrics']['grounding_score']
+        else:
+            # New format from evaluate_rag_methods.py
+            method_comp = self.results.get('method_comparison', {})
+            hybrid = method_comp.get('hybrid', {})
+            mrr_score = hybrid.get('mrr', {}).get('mean', 0)
+            f1_score = hybrid.get('f1', {}).get('mean', 0)
+            error_analysis = self.results.get('error_analysis', {})
+            hall_stats = error_analysis.get('hallucination_stats', {})
+            grounding = 1.0 - (hall_stats.get('hallucination_rate', 0) / 100.0)
         
         llm_judge_html = ""
         if 'llm_judge' in self.results:
-            overall = self.results['llm_judge']['average_scores']['overall_score']['mean']
+            llm = self.results['llm_judge']
+            if 'average_scores' in llm:
+                overall = llm['average_scores']['overall_score']['mean']
+            else:
+                overall = llm.get('overall_score', 0)
             llm_judge_html = f"""
             <div class="score-box">
                 <div class="score-label">LLM-as-Judge</div>
@@ -207,9 +222,12 @@ class ReportGenerator:
         <h2>📏 Detailed Metric Justifications</h2>
         """
         
-        # MRR
-        mrr = self.results['mandatory_metric']
-        html += f"""
+        # Handle both old and new formats
+        if 'mandatory_metric' in self.results:
+            # Old format
+            # MRR
+            mrr = self.results['mandatory_metric']
+            html += f"""
         <div class="metric-card">
             <h3>1️⃣  Mean Reciprocal Rank (MRR) - Mandatory Metric</h3>
             <p><strong>Score:</strong> {mrr['score']:.4f}</p>
@@ -227,10 +245,10 @@ class ReportGenerator:
             </div>
         </div>
         """
-        
-        # Answer Quality
-        aq = self.results['custom_metric_1']
-        html += f"""
+            
+            # Answer Quality
+            aq = self.results['custom_metric_1']
+            html += f"""
         <div class="metric-card">
             <h3>2️⃣  Answer Quality - Custom Metric 1</h3>
             <p><strong>F1 Score:</strong> {aq['metrics']['f1_score']:.4f}</p>
@@ -241,10 +259,40 @@ class ReportGenerator:
             </div>
         </div>
         """
+        else:
+            # New format from evaluate_rag_methods.py
+            method_comp = self.results.get('method_comparison', {})
+            hybrid = method_comp.get('hybrid', {})
+            
+            html += f"""
+        <div class="metric-card">
+            <h3>1️⃣  Mean Reciprocal Rank (MRR)</h3>
+            <p><strong>Hybrid MRR:</strong> {hybrid.get('mrr', {}).get('mean', 0):.4f}</p>
+            <div class="justification">
+                Measures how quickly the system identifies relevant documents in retrieved results.
+                Higher MRR indicates better ranking of relevant sources.
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <h3>2️⃣  Answer Quality Metrics</h3>
+            <p><strong>F1 Score:</strong> {hybrid.get('f1', {}).get('mean', 0):.4f}</p>
+            <p><strong>ROUGE-L:</strong> {hybrid.get('rouge_l', {}).get('mean', 0):.4f}</p>
+            <p><strong>Semantic Similarity:</strong> {hybrid.get('semantic_similarity', {}).get('mean', 0):.4f}</p>
+            <div class="justification">
+                Measures the quality and relevance of generated answers:
+                <br>• F1 Score: Token overlap between generated and reference answers
+                <br>• ROUGE-L: Longest common subsequence matching
+                <br>• Semantic Similarity: Embedding-based semantic alignment
+            </div>
+        </div>
+        """
         
         # Faithfulness
-        faith = self.results['custom_metric_2']
-        html += f"""
+        if 'custom_metric_2' in self.results:
+            # Old format
+            faith = self.results['custom_metric_2']
+            html += f"""
         <div class="metric-card">
             <h3>3️⃣  Faithfulness (Answer Grounding) - Custom Metric 2</h3>
             <p><strong>Grounding Score:</strong> {faith['metrics']['grounding_score']:.4f}</p>
@@ -252,6 +300,26 @@ class ReportGenerator:
             <p><strong>Hallucination Rate:</strong> {faith['metrics']['hallucination_rate']:.2%}</p>
             <div class="justification">
                 {faith['justification'].strip().replace(chr(10), '<br>')}
+            </div>
+        </div>
+        """
+        else:
+            # New format from evaluate_rag_methods.py
+            error_analysis = self.results.get('error_analysis', {})
+            hall_stats = error_analysis.get('hallucination_stats', {})
+            grounding_score = 1.0 - (hall_stats.get('hallucination_rate', 0) / 100.0)
+            
+            html += f"""
+        <div class="metric-card">
+            <h3>3️⃣  Faithfulness (Answer Grounding)</h3>
+            <p><strong>Grounding Score:</strong> {grounding_score:.4f}</p>
+            <p><strong>Hallucination Rate:</strong> {hall_stats.get('hallucination_rate', 0):.1f}%</p>
+            <p><strong>Faithful Rate:</strong> {hall_stats.get('faithful_rate', 0):.1f}%</p>
+            <div class="justification">
+                Measures whether generated answers are grounded in retrieved context:
+                <br>• Hallucination Rate: Answers with content not supported by retrieved documents
+                <br>• Faithful Rate: Answers well-grounded in retrieved context
+                <br>• Grounding Score: Semantic overlap between answer and context
             </div>
         </div>
         """
@@ -300,13 +368,16 @@ class ReportGenerator:
                 </tr>
         """
         
-        per_question = self.results['per_question_results']
-        aq_details = self.results['custom_metric_1']['details']
-        faith_details = self.results['custom_metric_2']['details']
-        mrr_details = self.results['mandatory_metric']['details']
-        
-        for i, result in enumerate(per_question[:10], 1):
-            html += f"""
+        # Handle both formats
+        if 'per_question_results' in self.results:
+            # Old format
+            per_question = self.results['per_question_results']
+            aq_details = self.results['custom_metric_1']['details']
+            faith_details = self.results['custom_metric_2']['details']
+            mrr_details = self.results['mandatory_metric']['details']
+            
+            for i, result in enumerate(per_question[:10], 1):
+                html += f"""
                 <tr>
                     <td>qa_{i:03d}</td>
                     <td>{result['question'][:60]}...</td>
@@ -315,6 +386,28 @@ class ReportGenerator:
                     <td>{aq_details['rouge_l']['scores'][i-1]:.3f}</td>
                     <td>{aq_details['semantic_similarity']['scores'][i-1]:.3f}</td>
                     <td>{faith_details['grounding_score']['scores'][i-1]:.3f}</td>
+                </tr>
+            """
+        else:
+            # New format from evaluate_rag_methods.py
+            per_question = self.results.get('per_question_metrics', [])
+            
+            for i, result in enumerate(per_question[:10], 1):
+                mrr = result.get('hybrid', {}).get('mrr_score', 0)
+                f1 = result.get('hybrid', {}).get('f1_score', 0)
+                rouge = result.get('hybrid', {}).get('rouge_l', 0)
+                semantic = result.get('hybrid', {}).get('semantic_similarity', 0)
+                grounding = result.get('hybrid', {}).get('grounding_score', 0)
+                
+                html += f"""
+                <tr>
+                    <td>qa_{i:03d}</td>
+                    <td>{result.get('question', '')[:60]}...</td>
+                    <td>{mrr:.3f}</td>
+                    <td>{f1:.3f}</td>
+                    <td>{rouge:.3f}</td>
+                    <td>{semantic:.3f}</td>
+                    <td>{grounding:.3f}</td>
                 </tr>
             """
         
@@ -376,10 +469,18 @@ class ReportGenerator:
         
         print(f"\n📄 Generating CSV report...")
         
-        per_question = self.results['per_question_results']
-        aq_details = self.results['custom_metric_1']['details']
-        faith_details = self.results['custom_metric_2']['details']
-        mrr_details = self.results['mandatory_metric']['details']
+        # Handle both old and new formats
+        if 'per_question_results' in self.results:
+            # Old format
+            per_question = self.results['per_question_results']
+            aq_details = self.results['custom_metric_1']['details']
+            faith_details = self.results['custom_metric_2']['details']
+            mrr_details = self.results['mandatory_metric']['details']
+            use_old_format = True
+        else:
+            # New format from evaluate_rag_methods.py
+            per_question = self.results.get('per_question_metrics', [])
+            use_old_format = False
         
         with open(csv_file, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
@@ -390,11 +491,10 @@ class ReportGenerator:
                 'Question',
                 'Generated_Answer',
                 'Ground_Truth',
-                'MRR',
+                'Dense_MRR',
+                'Sparse_MRR',
+                'Hybrid_MRR',
                 'F1_Score',
-                'ROUGE_L',
-                'Semantic_Similarity',
-                'Grounding_Score',
                 'Hallucinated'
             ]
             
@@ -410,31 +510,63 @@ class ReportGenerator:
             writer.writerow(header)
             
             # Data
-            for i, result in enumerate(per_question):
-                row = [
-                    f"qa_{i+1:03d}",
-                    result['question'],
-                    result['generated_answer'],
-                    result['ground_truth_answer'],
-                    mrr_details['reciprocal_ranks'][i],
-                    aq_details['f1_score']['scores'][i],
-                    aq_details['rouge_l']['scores'][i],
-                    aq_details['semantic_similarity']['scores'][i],
-                    faith_details['grounding_score']['scores'][i],
-                    'Yes' if faith_details['hallucination_flags'][i] else 'No'
-                ]
-                
-                if 'llm_judge' in self.results:
-                    judgment = self.results['llm_judge']['per_question_judgments'][i]
-                    row.extend([
-                        judgment['overall_score'],
-                        judgment['factual_accuracy']['score'],
-                        judgment['completeness']['score'],
-                        judgment['relevance']['score'],
-                        judgment['coherence']['score']
-                    ])
-                
-                writer.writerow(row)
+            if use_old_format:
+                for i, result in enumerate(per_question):
+                    row = [
+                        f"qa_{i+1:03d}",
+                        result['question'],
+                        result['generated_answer'],
+                        result['ground_truth_answer'],
+                        mrr_details['reciprocal_ranks'][i],
+                        mrr_details['reciprocal_ranks'][i],
+                        mrr_details['reciprocal_ranks'][i],
+                        aq_details['f1_score']['scores'][i],
+                        'Yes' if faith_details['hallucination_flags'][i] else 'No'
+                    ]
+                    
+                    if 'llm_judge' in self.results:
+                        judgment = self.results['llm_judge']['per_question_judgments'][i]
+                        row.extend([
+                            judgment['overall_score'],
+                            judgment['factual_accuracy']['score'],
+                            judgment['completeness']['score'],
+                            judgment['relevance']['score'],
+                            judgment['coherence']['score']
+                        ])
+                    
+                    writer.writerow(row)
+            else:
+                # New format - extract from per_question_metrics
+                for i, result in enumerate(per_question):
+                    dense_mrr = result.get('dense', {}).get('mrr', 0)
+                    sparse_mrr = result.get('sparse', {}).get('mrr', 0)
+                    hybrid_mrr = result.get('hybrid', {}).get('mrr', 0)
+                    f1 = result.get('hybrid', {}).get('f1', 0)
+                    hallucinated = result.get('error_category', '') == 'hallucination'
+                    
+                    row = [
+                        f"qa_{i+1:03d}",
+                        result.get('question', ''),
+                        result.get('generated_answer', ''),
+                        result.get('ground_truth_answer', ''),
+                        dense_mrr,
+                        sparse_mrr,
+                        hybrid_mrr,
+                        f1,
+                        'Yes' if hallucinated else 'No'
+                    ]
+                    
+                    if 'llm_judge' in self.results and 'per_question_judgments' in self.results['llm_judge']:
+                        judgment = self.results['llm_judge']['per_question_judgments'][i]
+                        row.extend([
+                            judgment.get('overall_score', 0),
+                            judgment.get('factual_accuracy', {}).get('score', 0),
+                            judgment.get('completeness', {}).get('score', 0),
+                            judgment.get('relevance', {}).get('score', 0),
+                            judgment.get('coherence', {}).get('score', 0)
+                        ])
+                    
+                    writer.writerow(row)
         
         print(f"   ✅ CSV report: {csv_file}")
     
