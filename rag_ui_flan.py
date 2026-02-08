@@ -26,7 +26,7 @@ try:
     from build_bm25_index import BM25Indexer
     from hybrid_rag_system import HybridRAGSystem
 except ImportError as e:
-    st.error(f"❌ Missing dependency: {e}")
+    st.error(f" Missing dependency: {e}")
     st.info("Install with: pip install -r requirements_complete.txt")
     st.stop()
 
@@ -37,13 +37,13 @@ try:
     LLM_AVAILABLE = True
 except ImportError:
     LLM_AVAILABLE = False
-    st.error("❌ Transformers not installed!")
+    st.error(" Transformers not installed!")
     st.info("Install with: pip install transformers torch")
 
 # Page config
 st.set_page_config(
     page_title="Hybrid RAG with Flan-T5",
-    page_icon="🤖",
+    page_icon="",
     layout="wide"
 )
 
@@ -117,7 +117,7 @@ def load_flan_t5():
     if not LLM_AVAILABLE:
         return None, None
     
-    with st.spinner("🤖 Loading Flan-T5-base model... (first time: ~900MB download)"):
+    with st.spinner("Loading Flan-T5-base model... (first time: ~900MB download)"):
         try:
             model_name = "google/flan-t5-base"
             
@@ -149,7 +149,7 @@ def generate_answer_flan_t5(model, tokenizer, query: str, context: str, max_leng
     """
     
     if model is None or tokenizer is None:
-        return "⚠️ Flan-T5 model not available. Please check installation."
+        return "Flan-T5 model not available. Please check installation."
     
     try:
         # Build instruction-style prompt (Flan-T5 works best with this format)
@@ -225,11 +225,11 @@ def display_chunk(chunk: Dict, rank: int):
                 st.markdown("**Sparse:** Not in top-K")
         
         # Title and URL
-        st.markdown(f"**📄 {chunk['metadata']['title']}**")
-        st.markdown(f"🔗 [{chunk['metadata']['url']}]({chunk['metadata']['url']})")
+        st.markdown(f"** {chunk['metadata']['title']}**")
+        st.markdown(f" [{chunk['metadata']['url']}]({chunk['metadata']['url']})")
         
         # Text
-        with st.expander("📝 View Full Text", expanded=False):
+        with st.expander(" View Full Text", expanded=False):
             st.write(chunk['text'])
         
         st.markdown("---")
@@ -239,7 +239,7 @@ def main():
     """Main Streamlit app"""
     
     # Header
-    st.markdown('<div class="main-header">🤖 Hybrid RAG with Flan-T5</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-header"> Hybrid RAG with Flan-T5</div>', unsafe_allow_html=True)
     st.markdown("""
     **Dense** (all-MiniLM-L6-v2) + **Sparse** (BM25) + **RRF** + **Flan-T5-base**
     
@@ -248,10 +248,10 @@ def main():
     
     # Sidebar
     with st.sidebar:
-        st.header("⚙️ Configuration")
+        st.header(" Configuration")
         
         # Model info
-        st.subheader("🤖 LLM Model")
+        st.subheader(" LLM Model")
         st.info("""
         **Flan-T5-base**
         - Size: 248MB
@@ -261,43 +261,43 @@ def main():
         """)
         
         # Retrieval parameters
-        st.subheader("🔍 Retrieval Parameters")
+        st.subheader(" Retrieval Parameters")
         top_k_per_method = st.slider("Top-K per method", 5, 50, 20, key="top_k")
         top_n_final = st.slider("Final top-N (RRF)", 3, 20, 10, key="top_n")
         rrf_k = st.slider("RRF constant k", 10, 100, 60, key="rrf_k")
         
         # Generation parameters
-        st.subheader("💬 Generation Parameters")
+        st.subheader("Generation Parameters")
         max_answer_tokens = st.slider("Max answer tokens", 50, 300, 150, key="max_tokens")
         
         st.markdown("---")
         
         # System status
         if st.session_state.rag_system:
-            st.success("✅ RAG System Loaded")
+            st.success("RAG System Loaded")
             st.metric("Chunks Indexed", 
                      st.session_state.rag_system.chroma_collection.count())
         
         if st.session_state.flan_model:
-            st.success("✅ Flan-T5 Model Loaded")
+            st.success(" Flan-T5 Model Loaded")
         
         # Search history
         if st.session_state.search_history:
-            st.subheader("📜 Recent Searches")
+            st.subheader(" Recent Searches")
             for i, q in enumerate(reversed(st.session_state.search_history[-5:]), 1):
                 st.text(f"{i}. {q[:40]}...")
         
         st.markdown("---")
         
         # Help
-        with st.expander("ℹ️ About Flan-T5"):
+        with st.expander(" About Flan-T5"):
             st.markdown("""
             **Why Flan-T5 for RAG?**
             
-            ✅ **Instruction-tuned**: Follows prompts better
-            ✅ **Q&A optimized**: Trained for question answering
-            ✅ **Coherent**: More natural responses
-            ✅ **Efficient**: 248MB (manageable size)
+            **Instruction-tuned**: Follows prompts better
+            **Q&A optimized**: Trained for question answering
+            **Coherent**: More natural responses
+            **Efficient**: 248MB (manageable size)
             
             Flan-T5 > DistilGPT2 for RAG tasks!
             """)
@@ -307,7 +307,7 @@ def main():
         st.session_state.rag_system = load_rag_system()
     
     if st.session_state.rag_system is None:
-        st.error("❌ Failed to load RAG system. Please check error messages above.")
+        st.error(" Failed to load RAG system. Please check error messages above.")
         st.stop()
     
     # Load Flan-T5
@@ -317,7 +317,7 @@ def main():
         st.session_state.flan_tokenizer = tokenizer
     
     # Main query input
-    st.markdown("### 🔍 Ask a Question")
+    st.markdown("###  Ask a Question")
     query = st.text_input(
         "Enter your question:",
         placeholder="e.g., What is machine learning? How does photosynthesis work?",
@@ -327,10 +327,10 @@ def main():
     
     col1, col2 = st.columns([1, 5])
     with col1:
-        search_button = st.button("🚀 Search & Answer", type="primary", use_container_width=True)
+        search_button = st.button(" Search & Answer", type="primary", use_container_width=True)
     with col2:
         if st.session_state.search_history:
-            if st.button("🗑️ Clear History", use_container_width=True):
+            if st.button(" Clear History", use_container_width=True):
                 st.session_state.search_history = []
                 st.rerun()
     
@@ -343,7 +343,7 @@ def main():
         start_time = time.time()
         
         # Search
-        with st.spinner("🔍 Retrieving relevant chunks..."):
+        with st.spinner(" Retrieving relevant chunks..."):
             results = st.session_state.rag_system.hybrid_search(
                 query,
                 top_k_per_method=top_k_per_method,
@@ -357,7 +357,7 @@ def main():
         generation_time = 0
         
         if st.session_state.flan_model:
-            with st.spinner("🤖 Generating answer with Flan-T5..."):
+            with st.spinner(" Generating answer with Flan-T5..."):
                 gen_start = time.time()
                 
                 # Get context
@@ -385,17 +385,17 @@ def main():
         # Response time metrics
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric("⏱️ Retrieval", f"{retrieval_time:.2f}s")
+            st.metric(" Retrieval", f"{retrieval_time:.2f}s")
         with col2:
-            st.metric("⏱️ Generation", f"{generation_time:.2f}s")
+            st.metric(" Generation", f"{generation_time:.2f}s")
         with col3:
-            st.metric("⏱️ Total", f"{total_time:.2f}s")
+            st.metric(" Total", f"{total_time:.2f}s")
         
         st.markdown("---")
         
         # Generated answer (featured display)
         if answer:
-            st.subheader("💬 Answer from Flan-T5")
+            st.subheader(" Answer from Flan-T5")
             st.markdown(f"""
             <div class="answer-box">
                 {answer}
@@ -403,13 +403,13 @@ def main():
             """, unsafe_allow_html=True)
             
             # Source attribution
-            st.caption("📚 Answer generated from top retrieved Wikipedia chunks")
+            st.caption(" Answer generated from top retrieved Wikipedia chunks")
             st.markdown("---")
         
         # Retrieved chunks in tabs
-        st.subheader(f"📚 Retrieved Chunks (Top {len(results['hybrid_results'])})")
+        st.subheader(f" Retrieved Chunks (Top {len(results['hybrid_results'])})")
         
-        tab1, tab2, tab3 = st.tabs(["🎯 Hybrid (RRF)", "📊 Dense Results", "📋 Sparse Results"])
+        tab1, tab2, tab3 = st.tabs([" Hybrid (RRF)", " Dense Results", " Sparse Results"])
         
         with tab1:
             st.markdown("**Reciprocal Rank Fusion Results**")
@@ -427,9 +427,9 @@ def main():
                 with st.container():
                     st.markdown(f"### #{i}")
                     st.markdown(f"**Similarity:** `{chunk['score']:.4f}`")
-                    st.markdown(f"**📄 {chunk['metadata']['title']}**")
-                    st.markdown(f"🔗 [{chunk['metadata']['url']}]({chunk['metadata']['url']})")
-                    with st.expander("📝 View Text"):
+                    st.markdown(f"** {chunk['metadata']['title']}**")
+                    st.markdown(f" [{chunk['metadata']['url']}]({chunk['metadata']['url']})")
+                    with st.expander(" View Text"):
                         st.write(chunk['text'])
                     st.markdown("---")
         
@@ -441,20 +441,20 @@ def main():
                 with st.container():
                     st.markdown(f"### #{i}")
                     st.markdown(f"**BM25 Score:** `{chunk['score']:.4f}`")
-                    st.markdown(f"**📄 {chunk['metadata']['title']}**")
-                    st.markdown(f"🔗 [{chunk['metadata']['url']}]({chunk['metadata']['url']})")
-                    with st.expander("📝 View Text"):
+                    st.markdown(f"** {chunk['metadata']['title']}**")
+                    st.markdown(f" [{chunk['metadata']['url']}]({chunk['metadata']['url']})")
+                    with st.expander(" View Text"):
                         st.write(chunk['text'])
                     st.markdown("---")
     
     elif search_button and not query:
-        st.warning("⚠️ Please enter a question!")
+        st.warning(" Please enter a question!")
     
     # Footer
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; color: gray; font-size: 0.9rem;">
-        🤖 Powered by <b>Flan-T5-base</b> • Dense (all-MiniLM-L6-v2) + Sparse (BM25) + RRF
+         Powered by <b>Flan-T5-base</b> • Dense (all-MiniLM-L6-v2) + Sparse (BM25) + RRF
     </div>
     """, unsafe_allow_html=True)
 
