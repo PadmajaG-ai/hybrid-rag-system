@@ -26,7 +26,7 @@ try:
     from rouge_score import rouge_scorer
     import numpy as np
 except ImportError as e:
-    print(f"❌ Missing dependency: {e}")
+    print(f" Missing dependency: {e}")
     sys.exit(1)
 
 
@@ -42,13 +42,13 @@ class ComprehensiveRAGEvaluator:
         self.rag_system = rag_system
         
         # Load semantic similarity model
-        print("\n📊 Loading semantic similarity model...")
+        print("\n Loading semantic similarity model...")
         self.semantic_model = SentenceTransformer('all-MiniLM-L6-v2')
         
         # Initialize ROUGE scorer
         self.rouge = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
         
-        print("✅ Evaluator ready with full feature set!")
+        print(" Evaluator ready with full feature set!")
     
     def detect_hallucination(self, answer: str, context_chunks: List[str]) -> Dict:
         """
@@ -530,18 +530,18 @@ class ComprehensiveRAGEvaluator:
         """Print error analysis summary"""
         
         print("\n" + "="*70)
-        print("🔍 ERROR ANALYSIS SUMMARY")
+        print(" ERROR ANALYSIS SUMMARY")
         print("="*70)
         
         dist = error_analysis['error_distribution']
         
         print("\nError Distribution:")
-        print(f"   ✅ Successful:           {dist['successful']['count']:3d} ({dist['successful']['percentage']:5.1f}%)")
-        print(f"   ⚠️  Retrieval Failure:    {dist['retrieval_failure']['count']:3d} ({dist['retrieval_failure']['percentage']:5.1f}%)")
-        print(f"   ⚠️  Incomplete Answer:    {dist['incomplete']['count']:3d} ({dist['incomplete']['percentage']:5.1f}%)")
-        print(f"   🚫 Hallucination:        {dist['hallucination']['count']:3d} ({dist['hallucination']['percentage']:5.1f}%)")
-        print(f"   ⚠️  Over-generalization:  {dist['over_generalization']['count']:3d} ({dist['over_generalization']['percentage']:5.1f}%)")
-        print(f"   ❌ Factual Error:        {dist['factual_error']['count']:3d} ({dist['factual_error']['percentage']:5.1f}%)")
+        print(f"   Successful:           {dist['successful']['count']:3d} ({dist['successful']['percentage']:5.1f}%)")
+        print(f"   Retrieval Failure:    {dist['retrieval_failure']['count']:3d} ({dist['retrieval_failure']['percentage']:5.1f}%)")
+        print(f"   Incomplete Answer:    {dist['incomplete']['count']:3d} ({dist['incomplete']['percentage']:5.1f}%)")
+        print(f"   Hallucination:        {dist['hallucination']['count']:3d} ({dist['hallucination']['percentage']:5.1f}%)")
+        print(f"   Over-generalization:  {dist['over_generalization']['count']:3d} ({dist['over_generalization']['percentage']:5.1f}%)")
+        print(f"   Factual Error:        {dist['factual_error']['count']:3d} ({dist['factual_error']['percentage']:5.1f}%)")
         
         hall_stats = error_analysis['hallucination_stats']
         
@@ -564,7 +564,7 @@ def main():
     args = parser.parse_args()
     
     # Load Q&A pairs
-    print(f"\n📂 Loading Q&A pairs from {args.qa_file}...")
+    print(f"\n Loading Q&A pairs from {args.qa_file}...")
     with open(args.qa_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
@@ -572,17 +572,17 @@ def main():
     if isinstance(data, dict):
         if 'qa_pairs' in data:
             qa_pairs = data['qa_pairs']
-            print(f"   ℹ️  Extracted qa_pairs from dictionary structure")
+            print(f" Extracted qa_pairs from dictionary structure")
         else:
-            print(f"   ❌ Error: Dictionary found but no 'qa_pairs' key")
+            print(f" Error: Dictionary found but no 'qa_pairs' key")
             return
     else:
         qa_pairs = data
 
-    print(f"   ✅ Loaded {len(qa_pairs)} Q&A pairs")
+    print(f" Loaded {len(qa_pairs)} Q&A pairs")
     
     # Initialize RAG system
-    print("\n🔧 Initializing Hybrid RAG System...")
+    print("\n Initializing Hybrid RAG System...")
     rag_system = HybridRAGSystem(
         chroma_collection_name="wikipedia_corpus",
         bm25_index_file="bm25_index.pkl"
@@ -615,12 +615,12 @@ def main():
     }
     
     # Save results
-    print(f"\n💾 Saving results to {args.output}...")
+    print(f"\n Saving results to {args.output}...")
     with open(args.output, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print(f"   ✅ Saved!")
+    print(f" Saved!")
     
-    print(f"\n✅ Evaluation complete!")
+    print(f"\n Evaluation complete!")
     print(f"   Time: {elapsed_time/60:.1f} minutes")
 
 
@@ -628,8 +628,8 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n\n⚠️  Interrupted by user.")
+        print("\n\n Interrupted by user.")
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\n Error: {e}")
         import traceback
         traceback.print_exc()
