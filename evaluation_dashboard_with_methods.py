@@ -24,8 +24,8 @@ import numpy as np
 import os
 
 st.set_page_config(
-    page_title="Complete RAG Evaluation Dashboard",
-    page_icon=" ",
+    page_title="RAG Evaluation Interactive Dashboard",
+    page_icon="",
     layout="wide"
 )
 
@@ -241,7 +241,7 @@ def show_llm_judge(results):
     st.markdown("---")
     
     # Dimension breakdown
-    st.subheader("📊 Dimension Breakdown")
+    st.subheader(" Dimension Breakdown")
     
     dimensions = ['factual_accuracy', 'completeness', 'relevance', 'coherence']
     dimension_labels = {
@@ -512,12 +512,12 @@ def show_error_analysis(results):
 
 def show_questions(results):
     """Show question explorer"""
-    st.header("🔍 Question Explorer")
+    st.header(" Question Explorer")
     
     per_question = results.get('per_question_results', [])
     
     if not per_question:
-        st.warning("⚠️ No per-question results")
+        st.warning(" No per-question results")
         return
     
     st.subheader(" Select a Question")
@@ -571,7 +571,7 @@ def show_questions(results):
     
     # Error analysis for this question
     if 'error_analysis' in result:
-        st.subheader("🔍 Error Analysis")
+        st.subheader(" Error Analysis")
         
         error_cat = result['error_analysis']
         
@@ -594,7 +594,7 @@ def show_questions(results):
 def main():
     """Main dashboard"""
     
-    st.title("📊 Complete RAG Evaluation Dashboard")
+    st.title("RAG Evaluation interactive Dashboard")
     st.markdown("**All Features: Method Comparison | LLM Judge | Hallucination | Error Analysis**")
     st.markdown("---")
     
@@ -611,7 +611,7 @@ def main():
         st.info("Expected files:\n- evaluation_output/evaluation_results.json\n- evaluation_output/judge_results.json")
         st.stop()
     
-    selected_file = st.sidebar.selectbox("📄 Results File:", available, index=0)
+    selected_file = st.sidebar.selectbox(" Results File:", available, index=0)
     
     # Load results
     results = load_results(selected_file)
@@ -627,12 +627,12 @@ def main():
     has_error_analysis = 'error_analysis' in results
     
     if has_method_comp:
-        st.sidebar.info(" Method comparison ✓")
+        st.sidebar.info(" Method comparison ")
     if has_llm_judge:
-        st.sidebar.info(" LLM Judge ✓")
+        st.sidebar.info(" LLM Judge ")
     if has_error_analysis:
-        st.sidebar.info(" Error analysis ✓")
-        st.sidebar.info(" Hallucination detection ✓")
+        st.sidebar.info(" Error analysis ")
+        st.sidebar.info(" Hallucination detection ")
     
     st.sidebar.markdown("---")
     st.sidebar.subheader(" Dataset")
