@@ -21,7 +21,7 @@ try:
     from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
     import torch
 except ImportError:
-    print("❌ Missing dependencies!")
+    print("Missing dependencies!")
     print("Install: pip install transformers torch")
     sys.exit(1)
 
@@ -70,22 +70,22 @@ class RobustQuestionGenerator:
     
     def __init__(self, model_name: str = "google/flan-t5-base"):
         """Initialize generator"""
-        print(f"\n🤖 Loading {model_name}...")
+        print(f"\ Loading {model_name}...")
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
         self.model.eval()
-        print("   ✅ Model loaded!")
+        print("   Model loaded!")
         
         self.generated_questions = set()
         self.used_chunks = defaultdict(int)  # Track chunk usage
     
     def load_corpus(self, corpus_file: str) -> List[Dict]:
         """Load corpus chunks"""
-        print(f"\n📂 Loading corpus...")
+        print(f"\n Loading corpus...")
         with open(corpus_file, 'r', encoding='utf-8') as f:
             corpus = json.load(f)
         chunks = corpus.get('chunks', [])
-        print(f"   ✅ Loaded {len(chunks)} chunks")
+        print(f"  Loaded {len(chunks)} chunks")
         return chunks
     
     def generate_question(self, text: str, question_type: str, attempt: int = 1) -> str:
@@ -246,9 +246,9 @@ Answer:"""
         """
         
         print(f"\n" + "="*70)
-        print(f"🎯 AUTOMATIC GENERATION: {num_questions} Q&A PAIRS")
+        print(f"AUTOMATIC GENERATION: {num_questions} Q&A PAIRS")
         print("="*70)
-        print("⏳ This will run until completion - no manual intervention needed!")
+        print("This will run until completion - no manual intervention needed!")
         print("="*70)
         
         qa_pairs = []
@@ -263,7 +263,7 @@ Answer:"""
         if total_target < num_questions:
             targets['factual'] += (num_questions - total_target)
         
-        print(f"\n📊 Target Distribution:")
+        print(f"\n Target Distribution:")
         for q_type, target in targets.items():
             print(f"   {q_type:15s}: {target} questions")
         print()
@@ -274,7 +274,7 @@ Answer:"""
         # Generate questions by type
         for question_type, target_count in targets.items():
             print(f"\n{'='*70}")
-            print(f"📝 Generating {question_type.upper()} questions (target: {target_count})")
+            print(f"Generating {question_type.upper()} questions (target: {target_count})")
             print(f"{'='*70}")
             
             attempts = 0
@@ -303,27 +303,27 @@ Answer:"""
                     # Show progress
                     total_progress = len(qa_pairs)
                     percentage = (total_progress / num_questions) * 100
-                    print(f"   ✅ {qa_id} | Type: {question_type:12s} | Progress: {total_progress}/{num_questions} ({percentage:5.1f}%)")
+                    print(f"   {qa_id} | Type: {question_type:12s} | Progress: {total_progress}/{num_questions} ({percentage:5.1f}%)")
                     print(f"      Q: {qa_data['question'][:80]}...")
                 
                 # Save checkpoint every 10 questions
                 if len(qa_pairs) % 10 == 0 and len(qa_pairs) > 0:
                     self._save_checkpoint(qa_pairs, f"checkpoint_{len(qa_pairs)}.json")
             
-            print(f"   ✅ Completed {progress[question_type]}/{target_count} {question_type} questions")
+            print(f"    Completed {progress[question_type]}/{target_count} {question_type} questions")
         
         print(f"\n{'='*70}")
-        print(f"🎉 GENERATION COMPLETE!")
+        print(f"GENERATION COMPLETE!")
         print(f"{'='*70}")
-        print(f"✅ Total generated: {len(qa_pairs)} Q&A pairs")
-        print(f"✅ Target achieved: {len(qa_pairs) >= num_questions}")
+        print(f"Total generated: {len(qa_pairs)} Q&A pairs")
+        print(f"Target achieved: {len(qa_pairs) >= num_questions}")
         
         # Show final distribution
         type_counts = defaultdict(int)
         for qa in qa_pairs:
             type_counts[qa['question_type']] += 1
         
-        print(f"\n📊 Final Distribution:")
+        print(f"\n Final Distribution:")
         for q_type, count in sorted(type_counts.items()):
             percentage = (count / len(qa_pairs)) * 100
             print(f"   {q_type:15s}: {count:3d} ({percentage:5.1f}%)")
@@ -358,7 +358,7 @@ Answer:"""
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         
-        print(f"\n💾 Saved {len(qa_pairs)} Q&A pairs to {output_file}")
+        print(f"\n Saved {len(qa_pairs)} Q&A pairs to {output_file}")
 
 
 def main():
@@ -375,11 +375,11 @@ def main():
     torch.manual_seed(args.seed)
     
     print("\n" + "="*70)
-    print("🚀 ROBUST AUTOMATIC Q&A GENERATION")
+    print(" ROBUST AUTOMATIC Q&A GENERATION")
     print("="*70)
-    print(f"📋 Target: {args.num_questions} questions")
-    print(f"📁 Output: {args.output}")
-    print(f"🎲 Seed: {args.seed}")
+    print(f" Target: {args.num_questions} questions")
+    print(f" Output: {args.output}")
+    print(f" Seed: {args.seed}")
     print("="*70)
     
     # Initialize
@@ -394,9 +394,9 @@ def main():
     # Save
     generator.save_qa_pairs(qa_pairs, args.output)
     
-    print(f"\n✅ DONE! Generated {len(qa_pairs)} Q&A pairs")
-    print(f"📁 Saved to: {args.output}")
-    print(f"\n💡 View results:")
+    print(f"\n DONE! Generated {len(qa_pairs)} Q&A pairs")
+    print(f" Saved to: {args.output}")
+    print(f"\n View results:")
     print(f"   python view_questions.py {args.output}")
 
 
@@ -404,8 +404,8 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n\n⚠️  Interrupted by user. Checkpoint files saved.")
+        print("\n\n  Interrupted by user. Checkpoint files saved.")
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\n Error: {e}")
         import traceback
         traceback.print_exc()
