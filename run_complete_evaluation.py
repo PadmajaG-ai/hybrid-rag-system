@@ -59,7 +59,7 @@ class CompletePipeline:
     def print_banner(self):
         """Print pipeline banner"""
         print("\n" + "="*70)
-        print(f"{Colors.BOLD}{Colors.CYAN}🚀 COMPLETE RAG EVALUATION PIPELINE{Colors.ENDC}")
+        print(f"{Colors.BOLD}{Colors.CYAN} COMPLETE RAG EVALUATION PIPELINE{Colors.ENDC}")
         print("="*70)
         print(f" Input: {Colors.BLUE}{self.qa_pairs_file}{Colors.ENDC}")
         print(f" Output: {Colors.BLUE}{self.output_dir}/{Colors.ENDC}")
@@ -380,14 +380,14 @@ class CompletePipeline:
     def print_final_summary(self, total_elapsed: float):
         """Print final summary"""
         print("\n" + "="*70)
-        print(f"{Colors.BOLD}{Colors.GREEN}🎉 PIPELINE COMPLETE!{Colors.ENDC}")
+        print(f"{Colors.BOLD}{Colors.GREEN} PIPELINE COMPLETE!{Colors.ENDC}")
         print("="*70)
         
         success_count = sum(self.step_results.values())
         total_steps = len(self.step_results)
         
         print(f"\n{Colors.BOLD}Results:{Colors.ENDC}")
-        print(f"   ✓ {success_count}/{total_steps} steps completed")
+        print(f"   {success_count}/{total_steps} steps completed")
         print(f"     Total time: {total_elapsed/60:.1f} minutes")
         
         print(f"\n{Colors.BOLD}Generated Files:{Colors.ENDC}")
@@ -401,23 +401,11 @@ class CompletePipeline:
         for name, path in output_files:
             if os.path.exists(path):
                 size = os.path.getsize(path) / 1024
-                print(f"   ✓ {name:20s} → {os.path.basename(path)} ({size:.1f} KB)")
+                print(f"    {name:20s} → {os.path.basename(path)} ({size:.1f} KB)")
             else:
-                print(f"   ✗ {name:20s} (not created)")
+                print(f"    {name:20s} (not created)")
         
-        print(f"\n{Colors.BOLD} Next Steps:{Colors.ENDC}")
-        print(f"   1. View dashboard:")
-        print(f"      {Colors.CYAN}streamlit run evaluation_dashboard_with_methods.py{Colors.ENDC}")
-        print(f"\n   2. Take 4 screenshots:")
-        print(f"      • Method Comparison tab")
-        print(f"      • LLM Judge tab")
-        print(f"      • Hallucination Detection tab")
-        print(f"      • Error Analysis tab")
-        print(f"\n   3. Insert screenshots into Word doc")
-        print(f"   4. Export to PDF")
-        print(f"   5. Submit!")
         
-        print("\n" + "="*70 + "\n")
     
     def run(self):
         """Run complete pipeline"""
